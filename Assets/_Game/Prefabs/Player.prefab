@@ -80,6 +80,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6020f6bf040fd5b4eb9e088aec1c2911, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Woi.Ninja.Player.Services.PlayerDash
+  _dashConfig: {fileID: 11400000, guid: 29620c768bbce764db016b990efe0066, type: 2}
+  _dashDistance: 4
+  _dashDuration: 0.1
+  _cooldown: 0.1
+  _inputEpsilon: 0.12
 --- !u!114 &1591405685175916887
 MonoBehaviour:
   m_ObjectHideFlags: 0
