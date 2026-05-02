@@ -1,34 +1,47 @@
 using UnityEngine;
+using Woi.Ninja.Player.Combat;
 
 namespace Woi.Ninja.Player.Services
 {
     /// <summary>
-    /// Combo chain: each step has its own swing length, cancel window, and post-hit cooldown.
+    /// Combo chain: each step has its own swing length, cancel window, hitbox window, and cooldown.
     /// Timing only advances via <see cref="TickAttack"/>.
     /// </summary>
     public sealed class PlayerCombat : MonoBehaviour, IPlayerCombat
     {
+        [Header("Hit detection")]
+        [SerializeField] private PlayerAttackHitbox _attackHitbox;
+
         [SerializeField] private ComboStepData[] _comboSteps =
         {
             new ComboStepData
             {
+                Damage = 10,
                 AttackDuration = 0.25f,
                 ComboInputOpenTime = 0.12f,
                 ComboInputCloseTime = 0.23f,
+                HitboxOpenTime = 0.05f,
+                HitboxCloseTime = 0.18f,
                 CooldownAfterAttack = 0.15f,
             },
             new ComboStepData
             {
+                Damage = 12,
                 AttackDuration = 0.22f,
                 ComboInputOpenTime = 0.1f,
                 ComboInputCloseTime = 0.2f,
+                HitboxOpenTime = 0.04f,
+                HitboxCloseTime = 0.16f,
                 CooldownAfterAttack = 0.15f,
             },
             new ComboStepData
             {
+                Damage = 15,
                 AttackDuration = 0.28f,
                 ComboInputOpenTime = 0.11f,
                 ComboInputCloseTime = 0.24f,
+                HitboxOpenTime = 0.06f,
+                HitboxCloseTime = 0.22f,
                 CooldownAfterAttack = 0.2f,
             },
         };
@@ -42,6 +55,8 @@ namespace Woi.Ninja.Player.Services
         private bool _queuedNext;
 
         private float _nextAttackAllowedTime;
+
+        private bool _hitboxWindowActive;
 
         private int MaxComboCount => _comboSteps != null ? _comboSteps.Length : 0;
 
@@ -78,6 +93,11 @@ namespace Woi.Ninja.Player.Services
 
             if (!CanAttack)
                 return;
+
+            if (_attackHitbox == null)
+                Debug.LogWarning("[PlayerCombat] Attack Hitbox referansi yok — Hasar/tetik yok. Inspector'dan ata.", this);
+
+            EnsureHitboxClosed();
 
             _comboIndex = 1;
             _segmentTimer = 0f;
@@ -126,6 +146,8 @@ namespace Woi.Ninja.Player.Services
                 return false;
             }
 
+            EnsureHitboxClosed();
+
             _queuedNext = false;
             _segmentFinishedLatch = false;
             _comboIndex++;
@@ -137,19 +159,31 @@ namespace Woi.Ninja.Player.Services
 
         public void TickAttack()
         {
-            if (_comboIndex == 0 || _segmentFinishedLatch || !TryGetActiveStep(out var step))
+            if (_comboIndex == 0 || !TryGetActiveStep(out var step))
                 return;
 
+            if (_segmentFinishedLatch)
+                return;
+
+            float timerBeforeStep = _segmentTimer;
             _segmentTimer += Time.deltaTime;
-            if (_segmentTimer >= step.AttackDuration)
-            {
+
+            bool segmentDone = _segmentTimer >= step.AttackDuration;
+            if (segmentDone)
                 _segmentTimer = step.AttackDuration;
+
+            UpdateHitboxWindow(step, segmentDone, timerBeforeStep);
+
+            if (segmentDone)
+            {
+                EnsureHitboxClosed();
                 _segmentFinishedLatch = true;
             }
         }
 
         public void ResetCombo()
         {
+            EnsureHitboxClosed();
             _comboIndex = 0;
             _segmentTimer = 0f;
             _segmentFinishedLatch = false;
@@ -159,7 +193,64 @@ namespace Woi.Ninja.Player.Services
 
         public void ClearAttackFinishedFlag()
         {
+            EnsureHitboxClosed();
             _segmentFinishedLatch = false;
+        }
+
+        /// <summary>
+        /// Uses swept overlap between [timerBeforeStep, current timer] and [HitboxOpenTime, HitboxCloseTime).
+        /// Without this, a large deltaTime can skip the entire window and never open the hitbox.
+        /// </summary>
+        private void UpdateHitboxWindow(ComboStepData step, bool segmentDone, float timerBeforeStep)
+        {
+            if (_attackHitbox == null)
+                return;
+
+            if (segmentDone)
+            {
+                EnsureHitboxClosed();
+                return;
+            }
+
+            bool overlapsHitWindow = Mathf.Max(timerBeforeStep, step.HitboxOpenTime)
+                < Mathf.Min(_segmentTimer, step.HitboxCloseTime);
+
+            if (overlapsHitWindow && !_hitboxWindowActive)
+            {
+                if (_attackHitbox.BeginHitWindow(BuildDamageInfo(step)))
+                    _hitboxWindowActive = true;
+            }
+            else if (!overlapsHitWindow && _hitboxWindowActive)
+            {
+                _attackHitbox.EndHitWindow();
+                _hitboxWindowActive = false;
+            }
+        }
+
+        private DamageInfo BuildDamageInfo(ComboStepData step)
+        {
+            var dir = transform.forward;
+            dir.y = 0f;
+            if (dir.sqrMagnitude < 1e-6f)
+                dir = Vector3.forward;
+            dir.Normalize();
+
+            return new DamageInfo
+            {
+                Source = gameObject,
+                Damage = step.Damage,
+                HitDirection = dir,
+                ComboIndex = _comboIndex,
+            };
+        }
+
+        private void EnsureHitboxClosed()
+        {
+            if (_attackHitbox == null || !_hitboxWindowActive)
+                return;
+
+            _attackHitbox.EndHitWindow();
+            _hitboxWindowActive = false;
         }
 
         private void LogCombat(string message)
@@ -169,7 +260,6 @@ namespace Woi.Ninja.Player.Services
 
         private bool HasValidSteps() => _comboSteps != null && _comboSteps.Length > 0;
 
-        /// <summary>Active step for current combo hit (1-based index → 0-based array).</summary>
         private bool TryGetActiveStep(out ComboStepData step)
         {
             step = default;
@@ -183,6 +273,8 @@ namespace Woi.Ninja.Player.Services
         private void EndCombo()
         {
             LogCombat("Combo ended");
+
+            EnsureHitboxClosed();
 
             float delay = 0f;
             if (_comboIndex >= 1 && _comboIndex <= MaxComboCount && HasValidSteps())
@@ -199,18 +291,32 @@ namespace Woi.Ninja.Player.Services
 #if UNITY_EDITOR
         private void OnValidate()
         {
+            if (_attackHitbox == null)
+                Debug.LogWarning("[PlayerCombat] Attack Hitbox atanmadi — vurus detection calismaz.", this);
+
             if (_comboSteps == null)
                 return;
 
             for (var i = 0; i < _comboSteps.Length; i++)
             {
                 ref var s = ref _comboSteps[i];
+                s.Damage = Mathf.Max(0, s.Damage);
                 s.AttackDuration = Mathf.Max(0.0001f, s.AttackDuration);
                 s.ComboInputOpenTime = Mathf.Max(0f, s.ComboInputOpenTime);
                 s.ComboInputCloseTime = Mathf.Max(s.ComboInputOpenTime, s.ComboInputCloseTime);
+                s.HitboxOpenTime = Mathf.Max(0f, s.HitboxOpenTime);
+                s.HitboxCloseTime = Mathf.Max(s.HitboxOpenTime, s.HitboxCloseTime);
                 s.CooldownAfterAttack = Mathf.Max(0f, s.CooldownAfterAttack);
                 if (s.ComboInputCloseTime > s.AttackDuration)
                     Debug.LogWarning("[PlayerCombat] Step " + (i + 1) + ": ComboInputCloseTime exceeds AttackDuration.", this);
+                if (s.HitboxCloseTime > s.AttackDuration)
+                    Debug.LogWarning("[PlayerCombat] Step " + (i + 1) + ": HitboxCloseTime exceeds AttackDuration.", this);
+                const float minHitboxSpan = 0.001f;
+                if (s.HitboxCloseTime - s.HitboxOpenTime < minHitboxSpan)
+                    Debug.LogWarning(
+                        "[PlayerCombat] Step " + (i + 1)
+                        + ": Hitbox penceresi yok veya cok dar (HitboxCloseTime > HitboxOpenTime olmali, ornek Open=0.05 Close=0.18). Vurus acilmaz.",
+                        this);
             }
         }
 #endif
