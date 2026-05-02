@@ -1,3 +1,4 @@
+using UnityEngine;
 using Woi.Ninja.Core.StateMachine;
 using Woi.Ninja.Player.Services;
 
@@ -18,22 +19,34 @@ namespace Woi.Ninja.Player
 
         public override void Enter()
         {
-            Dash.NotifyDashStateEntered();
+            Motor.Stop();
+
+            var fallback = Registry.PlayerTransform != null
+                ? Registry.PlayerTransform.forward
+                : Vector3.forward;
+
+            Dash.BeginDash(Input.MoveInput, fallback);
         }
 
         public override void Exit()
         {
-            Dash.NotifyDashStateExited();
+            Dash.ClearDashFinishedFlag();
         }
 
         public override void Tick()
         {
-            Motor.Stop();
+            if (!Dash.HasDashFinished)
+                return;
 
-            if (Dash.IsDashFinished)
-            {
+            if (Input.HasMoveInput)
+                Machine.SetState(Registry.Move);
+            else
                 Machine.SetState(Registry.Idle);
-            }
+        }
+
+        public override void FixedTick()
+        {
+            Dash.ApplyFixedDash();
         }
     }
 }

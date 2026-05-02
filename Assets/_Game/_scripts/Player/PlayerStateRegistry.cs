@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace Woi.Ninja.Player
 {
     /// <summary>
@@ -13,5 +15,8 @@ namespace Woi.Ninja.Player
         public PlayerDashState Dash { get; set; }
 
         public PlayerInteractState Interact { get; set; }
+
+        /// <summary>Used for dash direction fallback when move input is below epsilon.</summary>
+        public Transform PlayerTransform { get; set; }
     }
 }

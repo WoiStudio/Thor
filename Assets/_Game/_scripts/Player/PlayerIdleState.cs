@@ -26,7 +26,7 @@ namespace Woi.Ninja.Player
                 return;
             }
 
-            if (Input.DashPressed)
+            if (Input.DashPressed && Dash.CanDash)
             {
                 Machine.SetState(Registry.Dash);
                 return;

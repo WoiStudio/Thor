@@ -18,7 +18,7 @@ namespace Woi.Ninja.Player
 
         public override void Tick()
         {
-            if (Input.DashPressed)
+            if (Input.DashPressed && Dash.CanDash)
             {
                 Machine.SetState(Registry.Dash);
                 return;

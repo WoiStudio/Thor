@@ -89,6 +89,7 @@ namespace Woi.Ninja.Player
             registry.Move = _move;
             registry.Dash = _dashState;
             registry.Interact = _interact;
+            registry.PlayerTransform = transform;
 
             _stateMachine.SetState(_idle);
         }
