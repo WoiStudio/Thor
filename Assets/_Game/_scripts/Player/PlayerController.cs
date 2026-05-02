@@ -13,6 +13,7 @@ namespace Woi.Ninja.Player
         [SerializeField] private PlayerMotor _motor;
         [SerializeField] private PlayerDash _dash;
         [SerializeField] private PlayerInteraction _interaction;
+        [SerializeField] private PlayerCombat _combat;
 
         private StateMachine _stateMachine;
 
@@ -20,6 +21,7 @@ namespace Woi.Ninja.Player
         private PlayerMoveState _move;
         private PlayerDashState _dashState;
         private PlayerInteractState _interact;
+        private PlayerAttackState _attack;
 
         public StateMachine StateMachine => _stateMachine;
 
@@ -71,6 +73,13 @@ namespace Woi.Ninja.Player
                 return false;
             }
 
+            if (!TryResolve(ref _combat))
+            {
+                LogMissingService(nameof(PlayerCombat));
+                enabled = false;
+                return false;
+            }
+
             return true;
         }
 
@@ -80,15 +89,17 @@ namespace Woi.Ninja.Player
 
             var registry = new PlayerStateRegistry();
 
-            _idle = new PlayerIdleState(_inputReader, _motor, _dash, _interaction, _stateMachine, registry);
-            _move = new PlayerMoveState(_inputReader, _motor, _dash, _interaction, _stateMachine, registry);
-            _dashState = new PlayerDashState(_inputReader, _motor, _dash, _interaction, _stateMachine, registry);
-            _interact = new PlayerInteractState(_inputReader, _motor, _dash, _interaction, _stateMachine, registry);
+            _idle = new PlayerIdleState(_inputReader, _motor, _dash, _interaction, _combat, _stateMachine, registry);
+            _move = new PlayerMoveState(_inputReader, _motor, _dash, _interaction, _combat, _stateMachine, registry);
+            _dashState = new PlayerDashState(_inputReader, _motor, _dash, _interaction, _combat, _stateMachine, registry);
+            _interact = new PlayerInteractState(_inputReader, _motor, _dash, _interaction, _combat, _stateMachine, registry);
+            _attack = new PlayerAttackState(_inputReader, _motor, _dash, _interaction, _combat, _stateMachine, registry);
 
             registry.Idle = _idle;
             registry.Move = _move;
             registry.Dash = _dashState;
             registry.Interact = _interact;
+            registry.Attack = _attack;
             registry.PlayerTransform = transform;
 
             _stateMachine.SetState(_idle);

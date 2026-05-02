@@ -1,12 +1,14 @@
-using UnityEngine;
 using Woi.Ninja.Core.StateMachine;
 using Woi.Ninja.Player.Services;
 
 namespace Woi.Ninja.Player
 {
-    public sealed class PlayerDashState : PlayerState
+    /// <summary>
+    /// Katana combo state: chains up to 3 hits without exiting between swings when queued.
+    /// </summary>
+    public sealed class PlayerAttackState : PlayerState
     {
-        public PlayerDashState(
+        public PlayerAttackState(
             IPlayerInputReader input,
             IPlayerMotor motor,
             IPlayerDash dash,
@@ -21,33 +23,31 @@ namespace Woi.Ninja.Player
         public override void Enter()
         {
             Motor.Stop();
-
-            var fallback = Registry.PlayerTransform != null
-                ? Registry.PlayerTransform.forward
-                : Vector3.forward;
-
-            Dash.BeginDash(Input.MoveInput, fallback);
+            Combat.BeginAttack();
         }
 
         public override void Exit()
         {
-            Dash.ClearDashFinishedFlag();
+            Combat.ClearAttackFinishedFlag();
         }
 
         public override void Tick()
         {
-            if (!Dash.HasDashFinished)
+            Combat.TickAttack();
+
+            if (Input.AttackPressed)
+                Combat.TryQueueNextAttack();
+
+            if (!Combat.HasAttackFinished)
+                return;
+
+            if (Combat.TryBeginQueuedAttack())
                 return;
 
             if (Input.HasMoveInput)
                 Machine.SetState(Registry.Move);
             else
                 Machine.SetState(Registry.Idle);
-        }
-
-        public override void FixedTick()
-        {
-            Dash.ApplyFixedDash();
         }
     }
 }

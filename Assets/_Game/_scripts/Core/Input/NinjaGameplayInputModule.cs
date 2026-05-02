@@ -7,16 +7,16 @@ namespace Woi.Ninja.Core.Input
     /// Samples gameplay actions via the <b>new Input System</b>.
     /// </summary>
     /// <remarks>
-    /// <para><b>Recommended:</b> assign an <see cref="InputActionAsset"/> (e.g. <c>PlayerInputActions</c>) and define
-    /// the <b>Gameplay</b> map plus <b>Move</b>, <b>Dash</b>, <b>Interact</b> in the Input Actions window — PC + gamepad bindings and control schemes stay in one place.</para>
-    /// <para>If no asset is assigned, actions are built in code; optional <see cref="NinjaInputBindingProfile"/> then supplies paths.</para>
-    /// Requires package <c>com.unity.inputsystem</c>. Set <b>Active Input Handling</b> to Input System or Both.
+    /// <para><b>Recommended:</b> assign an <see cref="InputActionAsset"/> and define the <b>Gameplay</b> map with
+    /// <b>Move</b>, <b>Dash</b>, <b>Interact</b>, and <b>Attack</b>.</para>
+    /// <para>If no asset is assigned, actions are built in code.</para>
+    /// Requires package <c>com.unity.inputsystem</c>.
     /// </remarks>
     [DefaultExecutionOrder(-100)]
     public sealed class NinjaGameplayInputModule : MonoBehaviour, INinjaGameplayInput
     {
         [Header("Input Actions asset (recommended)")]
-        [Tooltip("When set, Move / Dash / Interact come from this asset (visual editor). Code-built bindings and Binding Profile are ignored.")]
+        [Tooltip("When set, actions come from this asset. Code fallback ignored.")]
         [SerializeField] private InputActionAsset _inputActionAsset;
 
         [SerializeField] private string _actionMapName = "Gameplay";
@@ -27,8 +27,10 @@ namespace Woi.Ninja.Core.Input
 
         [SerializeField] private string _interactActionName = "Interact";
 
+        [SerializeField] private string _attackActionName = "Attack";
+
         [Header("Code fallback (no asset)")]
-        [Tooltip("Only used when Input Action Asset is null. Create: Assets → Create → Woi → Ninja → Input Binding Profile.")]
+        [Tooltip("Only used when Input Action Asset is null.")]
         [SerializeField] private NinjaInputBindingProfile _bindingProfile;
 
         [SerializeField] [Min(0f)] private float _moveDeadZone = 0.01f;
@@ -36,12 +38,14 @@ namespace Woi.Ninja.Core.Input
         private InputAction _moveAction;
         private InputAction _dashAction;
         private InputAction _interactAction;
+        private InputAction _attackAction;
 
         private bool _disposeActionsOnDestroy;
 
         private Vector2 _moveInput;
         private bool _dashPressed;
         private bool _interactPressed;
+        private bool _attackPressed;
 
         private InputDevice _lastInputDevice;
 
@@ -52,6 +56,8 @@ namespace Woi.Ninja.Core.Input
         public bool DashPressed => _dashPressed;
 
         public bool InteractPressed => _interactPressed;
+
+        public bool AttackPressed => _attackPressed;
 
         /// <summary>Device that most recently produced meaningful input this frame (for UI prompts).</summary>
         public InputDevice LastInputDeviceUsed => _lastInputDevice;
@@ -92,17 +98,19 @@ namespace Woi.Ninja.Core.Input
             _moveAction = map.FindAction(_moveActionName, throwIfNotFound: false);
             _dashAction = map.FindAction(_dashActionName, throwIfNotFound: false);
             _interactAction = map.FindAction(_interactActionName, throwIfNotFound: false);
+            _attackAction = map.FindAction(_attackActionName, throwIfNotFound: false);
 
-            if (_moveAction == null || _dashAction == null || _interactAction == null)
+            if (_moveAction == null || _dashAction == null || _interactAction == null || _attackAction == null)
             {
                 Debug.LogError(
                     "[NinjaGameplayInputModule] Expected actions '" + _moveActionName + "', '" + _dashActionName +
-                    "', '" + _interactActionName + "' in map '" + _actionMapName + "'. Missing: " +
-                    DescribeMissing() + ". Falling back to code bindings.",
+                    "', '" + _interactActionName + "', '" + _attackActionName + "' in map '" + _actionMapName +
+                    "'. Missing: " + DescribeMissing() + ". Falling back to code bindings.",
                     this);
                 _moveAction = null;
                 _dashAction = null;
                 _interactAction = null;
+                _attackAction = null;
                 BuildActionsInCode(NinjaResolvedBindings.BuiltIn);
                 _disposeActionsOnDestroy = true;
                 return;
@@ -117,6 +125,7 @@ namespace Woi.Ninja.Core.Input
             if (_moveAction == null) s += _moveActionName + " ";
             if (_dashAction == null) s += _dashActionName + " ";
             if (_interactAction == null) s += _interactActionName + " ";
+            if (_attackAction == null) s += _attackActionName + " ";
             return string.IsNullOrEmpty(s) ? "(none)" : s.TrimEnd();
         }
 
@@ -125,6 +134,7 @@ namespace Woi.Ninja.Core.Input
             _moveAction?.Enable();
             _dashAction?.Enable();
             _interactAction?.Enable();
+            _attackAction?.Enable();
         }
 
         private void OnDisable()
@@ -132,6 +142,7 @@ namespace Woi.Ninja.Core.Input
             _moveAction?.Disable();
             _dashAction?.Disable();
             _interactAction?.Disable();
+            _attackAction?.Disable();
         }
 
         private void OnDestroy()
@@ -155,12 +166,19 @@ namespace Woi.Ninja.Core.Input
 
             _dashPressed = _dashAction != null && _dashAction.WasPressedThisFrame();
             _interactPressed = _interactAction != null && _interactAction.WasPressedThisFrame();
+            _attackPressed = _attackAction != null && _attackAction.WasPressedThisFrame();
 
             UpdateLastDevice();
         }
 
         private void UpdateLastDevice()
         {
+            if (_attackPressed && _attackAction?.activeControl != null)
+            {
+                _lastInputDevice = _attackAction.activeControl.device;
+                return;
+            }
+
             if (_dashPressed && _dashAction?.activeControl != null)
             {
                 _lastInputDevice = _dashAction.activeControl.device;
@@ -215,6 +233,11 @@ namespace Woi.Ninja.Core.Input
             _interactAction = new InputAction("Interact", InputActionType.Button);
             AddIfPresent(_interactAction, b.InteractKeyboard);
             AddIfPresent(_interactAction, b.InteractGamepad);
+
+            _attackAction = new InputAction("Attack", InputActionType.Button);
+            _attackAction.AddBinding("<Mouse>/leftButton");
+            _attackAction.AddBinding("<Keyboard>/j");
+            _attackAction.AddBinding("<Gamepad>/buttonNorth");
         }
 
         private static void AddIfPresent(InputAction action, string path)
@@ -231,6 +254,8 @@ namespace Woi.Ninja.Core.Input
             _dashAction = null;
             _interactAction?.Dispose();
             _interactAction = null;
+            _attackAction?.Dispose();
+            _attackAction = null;
         }
     }
 }
