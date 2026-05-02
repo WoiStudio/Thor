@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 6f1df056e4cfe3e4e98bd3db00f5a083
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 357044
+  packageName: Woi Audio - Lightweight Audio Framework
+  packageVersion: 1.0.0
+  assetPath: Assets/WoiAudio/AudioSystem/Runtime/Prefabs/Generated/AudioVoice.prefab
+  uploadId: 886922
