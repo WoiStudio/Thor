@@ -15,6 +15,8 @@ namespace Woi.Ninja.Player
         [SerializeField] private PlayerInteraction _interaction;
         [SerializeField] private PlayerCombat _combat;
         [SerializeField] private PlayerThrower _thrower;
+        [SerializeField] private PlayerAimProvider _aimProvider;
+        [SerializeField] private PlayerSwordFeedback _swordFeedback;
 
         private StateMachine _stateMachine;
 
@@ -89,6 +91,24 @@ namespace Woi.Ninja.Player
                 return false;
             }
 
+            if (!TryResolve(ref _aimProvider))
+            {
+                LogMissingService(nameof(PlayerAimProvider));
+                enabled = false;
+                return false;
+            }
+
+            if (_swordFeedback == null)
+                _swordFeedback = GetComponentInChildren<PlayerSwordFeedback>(true);
+
+            if (_swordFeedback == null)
+            {
+                Debug.LogWarning(
+                    "[PlayerController] '" + gameObject.name
+                    + "': PlayerSwordFeedback not found — sword swing feedback disabled. Add component or assign field.",
+                    this);
+            }
+
             return true;
         }
 
@@ -98,11 +118,23 @@ namespace Woi.Ninja.Player
 
             var registry = new PlayerStateRegistry();
 
+            IPlayerSwordFeedback sword = _swordFeedback;
+
             _idle = new PlayerIdleState(_inputReader, _motor, _dash, _interaction, _combat, _thrower, _stateMachine, registry);
             _move = new PlayerMoveState(_inputReader, _motor, _dash, _interaction, _combat, _thrower, _stateMachine, registry);
             _dashState = new PlayerDashState(_inputReader, _motor, _dash, _interaction, _combat, _thrower, _stateMachine, registry);
             _interact = new PlayerInteractState(_inputReader, _motor, _dash, _interaction, _combat, _thrower, _stateMachine, registry);
-            _attack = new PlayerAttackState(_inputReader, _motor, _dash, _interaction, _combat, _thrower, _stateMachine, registry);
+            _attack = new PlayerAttackState(
+                _inputReader,
+                _motor,
+                _dash,
+                _interaction,
+                _combat,
+                _thrower,
+                _aimProvider,
+                sword,
+                _stateMachine,
+                registry);
             _throw = new PlayerThrowState(_inputReader, _motor, _dash, _interaction, _combat, _thrower, _stateMachine, registry);
 
             registry.Idle = _idle;

@@ -10,6 +10,9 @@ namespace Woi.Ninja.Player.Services
     [RequireComponent(typeof(NinjaGameplayInputModule))]
     public sealed class PlayerInputReader : MonoBehaviour, IPlayerInputReader
     {
+        [Tooltip("Attack presses within this many seconds can still start or continue a combo after timing edges.")]
+        [SerializeField] [Min(0f)] private float _attackInputBufferSeconds = 0.18f;
+
         private INinjaGameplayInput _gameplayInput;
 
         private void Awake()
@@ -35,5 +38,25 @@ namespace Woi.Ninja.Player.Services
         public bool AttackPressed => _gameplayInput != null && _gameplayInput.AttackPressed;
 
         public bool ThrowPressed => _gameplayInput != null && _gameplayInput.ThrowPressed;
+
+        public bool TryConsumeAttackInputBuffer()
+        {
+            if (_gameplayInput == null)
+                return false;
+
+            return _gameplayInput.TryConsumeAttackInputBuffer(_attackInputBufferSeconds);
+        }
+
+        public void ClearAttackInputBuffer()
+        {
+            _gameplayInput?.ClearAttackInputBuffer();
+        }
+
+#if UNITY_EDITOR
+        private void OnValidate()
+        {
+            _attackInputBufferSeconds = Mathf.Max(0f, _attackInputBufferSeconds);
+        }
+#endif
     }
 }

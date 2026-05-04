@@ -23,6 +23,11 @@ namespace Woi.Ninja.Player.Services
                 HitboxOpenTime = 0.05f,
                 HitboxCloseTime = 0.18f,
                 CooldownAfterAttack = 0.15f,
+                MovementMode = AttackMovementMode.InputOnly,
+                InputMovementMultiplier = 0.35f,
+                AimMovementSpeed = 0f,
+                MovementOpenTime = 0f,
+                MovementCloseTime = 0.18f,
             },
             new ComboStepData
             {
@@ -33,6 +38,11 @@ namespace Woi.Ninja.Player.Services
                 HitboxOpenTime = 0.04f,
                 HitboxCloseTime = 0.16f,
                 CooldownAfterAttack = 0.15f,
+                MovementMode = AttackMovementMode.InputOnly,
+                InputMovementMultiplier = 0.30f,
+                AimMovementSpeed = 0f,
+                MovementOpenTime = 0f,
+                MovementCloseTime = 0.20f,
             },
             new ComboStepData
             {
@@ -43,12 +53,20 @@ namespace Woi.Ninja.Player.Services
                 HitboxOpenTime = 0.06f,
                 HitboxCloseTime = 0.22f,
                 CooldownAfterAttack = 0.2f,
+                MovementMode = AttackMovementMode.InputOrAimFallback,
+                InputMovementMultiplier = 0.20f,
+                AimMovementSpeed = 4.5f,
+                MovementOpenTime = 0.05f,
+                MovementCloseTime = 0.24f,
             },
         };
 
         private int _comboIndex;
 
         private float _segmentTimer;
+
+        /// <summary>Real time when the current combo step segment started (for combo input after swing ends).</summary>
+        private float _segmentWallClockStart;
 
         private bool _segmentFinishedLatch;
 
@@ -68,16 +86,50 @@ namespace Woi.Ninja.Player.Services
 
         public int CurrentComboIndex => _comboIndex;
 
+        public ComboStepData? CurrentStep
+        {
+            get
+            {
+                if (_comboIndex < 1 || _comboIndex > MaxComboCount || !HasValidSteps())
+                    return null;
+
+                return _comboSteps[_comboIndex - 1];
+            }
+        }
+
+        public float CurrentAttackElapsedTime => _comboIndex > 0 ? _segmentTimer : 0f;
+
+        public bool IsInMovementWindow
+        {
+            get
+            {
+                if (!IsAttacking || !TryGetActiveStep(out var step) || HasAttackFinished)
+                    return false;
+
+                return _segmentTimer >= step.MovementOpenTime && _segmentTimer <= step.MovementCloseTime;
+            }
+        }
+
+        public bool IsInComboRecoveryBuffer
+        {
+            get
+            {
+                if (!IsAttacking || !HasAttackFinished || HasQueuedNextAttack || !TryGetActiveStep(out var step))
+                    return false;
+
+                return ComboInputElapsed <= step.ComboInputCloseTime;
+            }
+        }
+
         public bool CanQueueNextAttack
         {
             get
             {
-                if (!IsAttacking || _segmentFinishedLatch || !TryGetActiveStep(out var step))
+                if (!IsAttacking || !TryGetActiveStep(out var step) || _comboIndex >= MaxComboCount)
                     return false;
 
-                return _segmentTimer >= step.ComboInputOpenTime
-                    && _segmentTimer <= step.ComboInputCloseTime
-                    && _comboIndex < MaxComboCount;
+                float elapsed = ComboInputElapsed;
+                return elapsed >= step.ComboInputOpenTime && elapsed <= step.ComboInputCloseTime;
             }
         }
 
@@ -101,6 +153,7 @@ namespace Woi.Ninja.Player.Services
 
             _comboIndex = 1;
             _segmentTimer = 0f;
+            _segmentWallClockStart = Time.time;
             _segmentFinishedLatch = false;
             _queuedNext = false;
 
@@ -110,12 +163,6 @@ namespace Woi.Ninja.Player.Services
         public void TryQueueNextAttack()
         {
             if (!IsAttacking)
-                return;
-
-            if (HasAttackFinished)
-                return;
-
-            if (_comboIndex >= MaxComboCount)
                 return;
 
             if (_queuedNext)
@@ -135,6 +182,9 @@ namespace Woi.Ninja.Player.Services
 
             if (!_queuedNext)
             {
+                if (TryGetActiveStep(out var step) && ComboInputElapsed <= step.ComboInputCloseTime)
+                    return false;
+
                 EndCombo();
                 return false;
             }
@@ -152,6 +202,7 @@ namespace Woi.Ninja.Player.Services
             _segmentFinishedLatch = false;
             _comboIndex++;
             _segmentTimer = 0f;
+            _segmentWallClockStart = Time.time;
 
             LogCombat("Attack " + _comboIndex + " started");
             return true;
@@ -186,6 +237,7 @@ namespace Woi.Ninja.Player.Services
             EnsureHitboxClosed();
             _comboIndex = 0;
             _segmentTimer = 0f;
+            _segmentWallClockStart = 0f;
             _segmentFinishedLatch = false;
             _queuedNext = false;
             _nextAttackAllowedTime = Time.time;
@@ -197,10 +249,6 @@ namespace Woi.Ninja.Player.Services
             _segmentFinishedLatch = false;
         }
 
-        /// <summary>
-        /// Uses swept overlap between [timerBeforeStep, current timer] and [HitboxOpenTime, HitboxCloseTime).
-        /// Without this, a large deltaTime can skip the entire window and never open the hitbox.
-        /// </summary>
         private void UpdateHitboxWindow(ComboStepData step, bool segmentDone, float timerBeforeStep)
         {
             if (_attackHitbox == null)
@@ -270,6 +318,8 @@ namespace Woi.Ninja.Player.Services
             return true;
         }
 
+        private float ComboInputElapsed => Time.time - _segmentWallClockStart;
+
         private void EndCombo()
         {
             LogCombat("Combo ended");
@@ -282,6 +332,7 @@ namespace Woi.Ninja.Player.Services
 
             _comboIndex = 0;
             _segmentTimer = 0f;
+            _segmentWallClockStart = 0f;
             _queuedNext = false;
             _segmentFinishedLatch = false;
 
@@ -307,8 +358,10 @@ namespace Woi.Ninja.Player.Services
                 s.HitboxOpenTime = Mathf.Max(0f, s.HitboxOpenTime);
                 s.HitboxCloseTime = Mathf.Max(s.HitboxOpenTime, s.HitboxCloseTime);
                 s.CooldownAfterAttack = Mathf.Max(0f, s.CooldownAfterAttack);
-                if (s.ComboInputCloseTime > s.AttackDuration)
-                    Debug.LogWarning("[PlayerCombat] Step " + (i + 1) + ": ComboInputCloseTime exceeds AttackDuration.", this);
+                s.InputMovementMultiplier = Mathf.Max(0f, s.InputMovementMultiplier);
+                s.AimMovementSpeed = Mathf.Max(0f, s.AimMovementSpeed);
+                s.MovementOpenTime = Mathf.Max(0f, s.MovementOpenTime);
+                s.MovementCloseTime = Mathf.Max(s.MovementOpenTime, s.MovementCloseTime);
                 if (s.HitboxCloseTime > s.AttackDuration)
                     Debug.LogWarning("[PlayerCombat] Step " + (i + 1) + ": HitboxCloseTime exceeds AttackDuration.", this);
                 const float minHitboxSpan = 0.001f;
@@ -317,6 +370,8 @@ namespace Woi.Ninja.Player.Services
                         "[PlayerCombat] Step " + (i + 1)
                         + ": Hitbox penceresi yok veya cok dar (HitboxCloseTime > HitboxOpenTime olmali, ornek Open=0.05 Close=0.18). Vurus acilmaz.",
                         this);
+                if (s.MovementCloseTime > s.AttackDuration)
+                    Debug.LogWarning("[PlayerCombat] Step " + (i + 1) + ": MovementCloseTime exceeds AttackDuration.", this);
             }
         }
 #endif

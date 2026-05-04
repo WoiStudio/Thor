@@ -52,6 +52,8 @@ namespace Woi.Ninja.Core.Input
         private bool _attackPressed;
         private bool _throwPressed;
 
+        private float _lastAttackPressTime = -1000f;
+
         private InputDevice _lastInputDevice;
 
         public Vector2 MoveInput => _moveInput;
@@ -65,6 +67,26 @@ namespace Woi.Ninja.Core.Input
         public bool AttackPressed => _attackPressed;
 
         public bool ThrowPressed => _throwPressed;
+
+        public bool TryConsumeAttackInputBuffer(float maxAgeSeconds)
+        {
+            if (_attackAction == null || maxAgeSeconds <= 0f)
+                return false;
+
+            if (_attackPressed)
+                return false;
+
+            if (Time.time - _lastAttackPressTime > maxAgeSeconds)
+                return false;
+
+            _lastAttackPressTime = -1000f;
+            return true;
+        }
+
+        public void ClearAttackInputBuffer()
+        {
+            _lastAttackPressTime = -1000f;
+        }
 
         /// <summary>Device that most recently produced meaningful input this frame (for UI prompts).</summary>
         public InputDevice LastInputDeviceUsed => _lastInputDevice;
@@ -182,6 +204,9 @@ namespace Woi.Ninja.Core.Input
             _interactPressed = _interactAction != null && _interactAction.WasPressedThisFrame();
             _attackPressed = _attackAction != null && _attackAction.WasPressedThisFrame();
             _throwPressed = _throwAction != null && _throwAction.WasPressedThisFrame();
+
+            if (_attackPressed)
+                _lastAttackPressTime = Time.time;
 
             UpdateLastDevice();
         }

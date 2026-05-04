@@ -19,5 +19,15 @@ namespace Woi.Ninja.Core.Input
         bool AttackPressed { get; }
 
         bool ThrowPressed { get; }
+
+        /// <summary>
+        /// Consumes a recent attack press that may have occurred on an earlier frame (e.g. same frame as combo end).
+        /// </summary>
+        bool TryConsumeAttackInputBuffer(float maxAgeSeconds);
+
+        /// <summary>
+        /// Drops the stored attack-press time so it cannot be consumed as a combo-chain input.
+        /// </summary>
+        void ClearAttackInputBuffer();
     }
 }

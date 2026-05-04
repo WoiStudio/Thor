@@ -400,6 +400,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &898589628 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7616421622860669196, guid: c6c7b3e513bd53741ab81a86bde4c15d, type: 3}
+  m_PrefabInstance: {fileID: 5116312436524995512}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &898589637 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 805867139651526826, guid: c6c7b3e513bd53741ab81a86bde4c15d, type: 3}
+  m_PrefabInstance: {fileID: 5116312436524995512}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &898589648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898589628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89067cfdf2c4c2b4497d3d72615e9590, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Woi.Ninja.Player.Services.PlayerAimProvider
+  _camera: {fileID: 956430704}
+  _playerRoot: {fileID: 898589637}
 --- !u!1 &956430700
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,6 +561,36 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!1 &1831152662 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2318751613690143997, guid: c6c7b3e513bd53741ab81a86bde4c15d, type: 3}
+  m_PrefabInstance: {fileID: 5116312436524995512}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1831152667 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6242325894750430587, guid: c6c7b3e513bd53741ab81a86bde4c15d, type: 3}
+  m_PrefabInstance: {fileID: 5116312436524995512}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1831152668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831152662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e50ce3c0db9e6b4db7c63f9e5d11f86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Woi.Ninja.Player.Services.PlayerSwordFeedback
+  _swordPivot: {fileID: 1831152667}
+  _swingDuration: 0.18
+  _attack1StartEuler: {x: -55, y: 0, z: 25}
+  _attack1EndEuler: {x: 40, y: 0, z: -15}
+  _attack2StartEuler: {x: 50, y: 0, z: -20}
+  _attack2EndEuler: {x: -45, y: 0, z: 20}
+  _attack3StartEuler: {x: -60, y: 0, z: 0}
+  _attack3EndEuler: {x: 55, y: 0, z: 10}
 --- !u!1 &1997657901
 GameObject:
   m_ObjectHideFlags: 0
@@ -724,10 +778,64 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7630955396488170730, guid: c6c7b3e513bd53741ab81a86bde4c15d, type: 3}
+      propertyPath: _comboSteps.Array.data[0].AttackDuration
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7630955396488170730, guid: c6c7b3e513bd53741ab81a86bde4c15d, type: 3}
+      propertyPath: _comboSteps.Array.data[1].AttackDuration
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7630955396488170730, guid: c6c7b3e513bd53741ab81a86bde4c15d, type: 3}
+      propertyPath: _comboSteps.Array.data[1].HitboxCloseTime
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 7630955396488170730, guid: c6c7b3e513bd53741ab81a86bde4c15d, type: 3}
+      propertyPath: _comboSteps.Array.data[0].ComboInputOpenTime
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7630955396488170730, guid: c6c7b3e513bd53741ab81a86bde4c15d, type: 3}
+      propertyPath: _comboSteps.Array.data[1].ComboInputOpenTime
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7630955396488170730, guid: c6c7b3e513bd53741ab81a86bde4c15d, type: 3}
+      propertyPath: _comboSteps.Array.data[2].ComboInputOpenTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7630955396488170730, guid: c6c7b3e513bd53741ab81a86bde4c15d, type: 3}
+      propertyPath: _comboSteps.Array.data[0].ComboInputCloseTime
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7630955396488170730, guid: c6c7b3e513bd53741ab81a86bde4c15d, type: 3}
+      propertyPath: _comboSteps.Array.data[0].CooldownAfterAttack
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7630955396488170730, guid: c6c7b3e513bd53741ab81a86bde4c15d, type: 3}
+      propertyPath: _comboSteps.Array.data[1].ComboInputCloseTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7630955396488170730, guid: c6c7b3e513bd53741ab81a86bde4c15d, type: 3}
+      propertyPath: _comboSteps.Array.data[1].CooldownAfterAttack
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7630955396488170730, guid: c6c7b3e513bd53741ab81a86bde4c15d, type: 3}
+      propertyPath: _comboSteps.Array.data[2].ComboInputCloseTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7630955396488170730, guid: c6c7b3e513bd53741ab81a86bde4c15d, type: 3}
+      propertyPath: _comboSteps.Array.data[2].CooldownAfterAttack
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7616421622860669196, guid: c6c7b3e513bd53741ab81a86bde4c15d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 898589648}
+    - targetCorrespondingSourceObject: {fileID: 2318751613690143997, guid: c6c7b3e513bd53741ab81a86bde4c15d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1831152668}
   m_SourcePrefab: {fileID: 100100000, guid: c6c7b3e513bd53741ab81a86bde4c15d, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

@@ -26,6 +26,12 @@ namespace Woi.Ninja.Player
                 return;
             }
 
+            if (Combat.CanAttack && Input.TryConsumeAttackInputBuffer())
+            {
+                Machine.SetState(Registry.Attack);
+                return;
+            }
+
             if (Input.ThrowPressed && Thrower.CanThrow)
             {
                 Machine.SetState(Registry.Throw);

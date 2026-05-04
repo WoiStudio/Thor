@@ -18,5 +18,16 @@ namespace Woi.Ninja.Player.Services
         bool AttackPressed { get; }
 
         bool ThrowPressed { get; }
+
+        /// <summary>
+        /// True once if attack was pressed within the buffer window and not already consumed this way.
+        /// Use with <see cref="AttackPressed"/> for reliable chain / post-cooldown starts.
+        /// </summary>
+        bool TryConsumeAttackInputBuffer();
+
+        /// <summary>
+        /// Clears the attack press timestamp so a press that started this swing cannot queue the next hit on the following frame.
+        /// </summary>
+        void ClearAttackInputBuffer();
     }
 }
