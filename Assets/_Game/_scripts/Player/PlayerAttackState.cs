@@ -31,8 +31,7 @@ namespace Woi.Ninja.Player
 
         public override void Enter()
         {
-            if (_aimProvider.HasAimDirection)
-                Motor.FaceWorldDirection(_aimProvider.AimDirection);
+            SnapFacingToCurrentAim();
 
             Motor.Stop();
             Combat.BeginAttack();
@@ -59,6 +58,8 @@ namespace Woi.Ninja.Player
 
             if (Combat.TryBeginQueuedAttack())
             {
+                SnapFacingToCurrentAim();
+                Motor.Stop();
                 Input.ClearAttackInputBuffer();
                 _swordFeedback?.PlaySwing(Combat.CurrentComboIndex);
                 return;
@@ -73,12 +74,20 @@ namespace Woi.Ninja.Player
                 Machine.SetState(Registry.Idle);
         }
 
+        private void SnapFacingToCurrentAim()
+        {
+            _aimProvider.SampleAimNow();
+
+            if (_aimProvider.HasAimDirection)
+                Motor.FaceWorldDirectionImmediate(_aimProvider.AimDirection);
+        }
+
         public override void FixedTick()
         {
             if (Combat.IsInComboRecoveryBuffer)
             {
                 Motor.Move(Input.MoveInput);
-                Motor.ApplyFixedMovement();
+                Motor.ApplyFixedMovement(false);
                 return;
             }
 
@@ -110,7 +119,7 @@ namespace Woi.Ninja.Player
                     if (Input.HasMoveInput)
                     {
                         Motor.Move(Input.MoveInput, step.InputMovementMultiplier);
-                        Motor.ApplyFixedMovement();
+                        Motor.ApplyFixedMovement(false);
                     }
                     else
                     {
@@ -123,7 +132,7 @@ namespace Woi.Ninja.Player
                     if (_aimProvider.HasAimDirection)
                     {
                         Motor.MoveWorldDirection(_aimProvider.AimDirection, step.AimMovementSpeed);
-                        Motor.ApplyFixedMovement();
+                        Motor.ApplyFixedMovement(false);
                     }
                     else
                     {
@@ -136,12 +145,12 @@ namespace Woi.Ninja.Player
                     if (Input.HasMoveInput)
                     {
                         Motor.Move(Input.MoveInput, step.InputMovementMultiplier);
-                        Motor.ApplyFixedMovement();
+                        Motor.ApplyFixedMovement(false);
                     }
                     else if (_aimProvider.HasAimDirection)
                     {
                         Motor.MoveWorldDirection(_aimProvider.AimDirection, step.AimMovementSpeed);
-                        Motor.ApplyFixedMovement();
+                        Motor.ApplyFixedMovement(false);
                     }
                     else
                     {

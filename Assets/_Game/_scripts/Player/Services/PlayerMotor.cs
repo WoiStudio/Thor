@@ -104,8 +104,29 @@ namespace Woi.Ninja.Player.Services
 
             d.Normalize();
             var target = Quaternion.LookRotation(d);
-            float t = 1f - Mathf.Exp(-_rotationSlerpSpeed * Time.deltaTime);
-            _rigidbody.MoveRotation(Quaternion.Slerp(_rigidbody.rotation, target, t));
+            float dt = Time.deltaTime;
+            if (dt <= 1e-5f)
+            {
+                _rigidbody.MoveRotation(target);
+                return;
+            }
+
+            float t = 1f - Mathf.Exp(-_rotationSlerpSpeed * dt);
+            _rigidbody.MoveRotation(Quaternion.Slerp(_rigidbody.rotation, target, Mathf.Clamp01(t)));
+        }
+
+        public void FaceWorldDirectionImmediate(Vector3 worldDirection)
+        {
+            if (_rigidbody == null)
+                return;
+
+            var d = worldDirection;
+            d.y = 0f;
+            if (d.sqrMagnitude < FaceDirectionEpsilonSqr)
+                return;
+
+            d.Normalize();
+            _rigidbody.MoveRotation(Quaternion.LookRotation(d));
         }
 
         public void Stop()
@@ -119,7 +140,7 @@ namespace Woi.Ninja.Player.Services
             ZeroPlanarVelocity();
         }
 
-        public void ApplyFixedMovement()
+        public void ApplyFixedMovement(bool rotateTowardMovement = true)
         {
             if (_rigidbody == null)
                 return;
@@ -143,14 +164,22 @@ namespace Woi.Ninja.Player.Services
             var deltaInput = dir * (speed * Time.fixedDeltaTime);
             _rigidbody.MovePosition(_rigidbody.position + deltaInput);
 
-            FaceDirection(dir);
+            if (rotateTowardMovement)
+                FaceDirection(dir);
         }
 
         private void FaceDirection(Vector3 directionXZ)
         {
             var target = Quaternion.LookRotation(directionXZ.normalized);
-            var t = 1f - Mathf.Exp(-_rotationSlerpSpeed * Time.fixedDeltaTime);
-            _rigidbody.MoveRotation(Quaternion.Slerp(_rigidbody.rotation, target, t));
+            float dt = Time.fixedDeltaTime;
+            if (dt <= 1e-6f)
+            {
+                _rigidbody.MoveRotation(target);
+                return;
+            }
+
+            float t = 1f - Mathf.Exp(-_rotationSlerpSpeed * dt);
+            _rigidbody.MoveRotation(Quaternion.Slerp(_rigidbody.rotation, target, Mathf.Clamp01(t)));
         }
 
         private void ZeroPlanarVelocity()

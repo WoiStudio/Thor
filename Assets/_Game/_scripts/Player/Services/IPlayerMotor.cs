@@ -22,9 +22,13 @@ namespace Woi.Ninja.Player.Services
         /// <summary>Yaw-only rotation toward a world-space direction on the XZ plane.</summary>
         void FaceWorldDirection(Vector3 worldDirection);
 
+        /// <summary>Sets yaw instantly toward the XZ direction (e.g. attack start; not smoothed).</summary>
+        void FaceWorldDirectionImmediate(Vector3 worldDirection);
+
         /// <summary>
         /// Applies one physics step of movement and rotation. Call from <c>FixedUpdate</c> (e.g. move state's <see cref="Woi.Ninja.Core.StateMachine.IState.FixedTick"/>).
         /// </summary>
-        void ApplyFixedMovement();
+        /// <param name="rotateTowardMovement">When false, only translation is applied; yaw stays unchanged (attack strafe / lunge).</param>
+        void ApplyFixedMovement(bool rotateTowardMovement = true);
     }
 }

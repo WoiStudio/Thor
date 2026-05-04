@@ -29,6 +29,11 @@ namespace Woi.Ninja.Player.Services
 
         public Vector3 AimWorldPoint => _aimWorldPoint;
 
+        public void SampleAimNow()
+        {
+            RefreshAim();
+        }
+
         private void Awake()
         {
             if (_playerRoot == null)
