@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3647490665405497338}
   - component: {fileID: 8628239760566789807}
   - component: {fileID: 5532768259096662758}
+  - component: {fileID: 8979434065393471296}
   m_Layer: 0
   m_Name: Hitbox
   m_TagString: Untagged
@@ -127,6 +128,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Woi.Ninja.Player.Combat.PlayerAttackHitbox
   _logHitWindow: 1
   _logOverlapScan: 1
+--- !u!114 &8979434065393471296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2318751613690143997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e50ce3c0db9e6b4db7c63f9e5d11f86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Woi.Ninja.Player.Services.PlayerSwordFeedback
+  _swordPivot: {fileID: 6242325894750430587}
+  _swingDuration: 0.18
+  _attack1StartEuler: {x: -55, y: 0, z: 25}
+  _attack1EndEuler: {x: 40, y: 0, z: -15}
+  _attack2StartEuler: {x: 50, y: 0, z: -20}
+  _attack2EndEuler: {x: -45, y: 0, z: 20}
+  _attack3StartEuler: {x: -60, y: 0, z: 0}
+  _attack3EndEuler: {x: 55, y: 0, z: 10}
 --- !u!1 &7616421622860669196
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,6 +167,7 @@ GameObject:
   - component: {fileID: 5606817851780388483}
   - component: {fileID: 7630955396488170730}
   - component: {fileID: 3425306924707115244}
+  - component: {fileID: 7647826597062955927}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -189,6 +211,8 @@ MonoBehaviour:
   _interaction: {fileID: 2585704045789700935}
   _combat: {fileID: 7630955396488170730}
   _thrower: {fileID: 0}
+  _aimProvider: {fileID: 0}
+  _swordFeedback: {fileID: 0}
 --- !u!114 &2585704045789700935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,6 +290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82c5ab2978e21434ea79e0d8dbbbd4d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Woi.Ninja.Player.Services.PlayerInputReader
+  _attackInputBufferSeconds: 0.18
 --- !u!114 &6547407251901742050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -329,26 +354,41 @@ MonoBehaviour:
   _attackHitbox: {fileID: 5532768259096662758}
   _comboSteps:
   - Damage: 15
-    AttackDuration: 0.25
-    ComboInputOpenTime: 0.12
-    ComboInputCloseTime: 0.23
+    AttackDuration: 0.15
+    ComboInputOpenTime: 0.05
+    ComboInputCloseTime: 0.8
     HitboxOpenTime: 0.05
     HitboxCloseTime: 0.18
-    CooldownAfterAttack: 0.15
+    CooldownAfterAttack: 0.05
+    MovementMode: 1
+    InputMovementMultiplier: 0.35
+    AimMovementSpeed: 0
+    MovementOpenTime: 0
+    MovementCloseTime: 0.18
   - Damage: 20
-    AttackDuration: 0.22
-    ComboInputOpenTime: 0.1
-    ComboInputCloseTime: 0.2
+    AttackDuration: 0.15
+    ComboInputOpenTime: 0.05
+    ComboInputCloseTime: 0.5
     HitboxOpenTime: 0.05
-    HitboxCloseTime: 0.18
-    CooldownAfterAttack: 0.15
+    HitboxCloseTime: 0.35
+    CooldownAfterAttack: 0.05
+    MovementMode: 1
+    InputMovementMultiplier: 0.3
+    AimMovementSpeed: 0
+    MovementOpenTime: 0
+    MovementCloseTime: 0.2
   - Damage: 30
     AttackDuration: 0.28
-    ComboInputOpenTime: 0.11
-    ComboInputCloseTime: 0.24
+    ComboInputOpenTime: 0
+    ComboInputCloseTime: 0
     HitboxOpenTime: 0.05
     HitboxCloseTime: 0.18
     CooldownAfterAttack: 0.2
+    MovementMode: 2
+    InputMovementMultiplier: 0.2
+    AimMovementSpeed: 8
+    MovementOpenTime: 0.05
+    MovementCloseTime: 0.48
 --- !u!114 &3425306924707115244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -361,11 +401,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af5e2485de805d74e9e3515adff1bc22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Woi.Ninja.Player.Services.PlayerThrower
-  _throwDuration: 0.35
+  _throwDuration: 0.1
   _cooldown: 0.2
   _projectilePrefab: {fileID: 6778355497389983406, guid: 8dd45087474417346855baf439e879af, type: 3}
   _spawnPoint: {fileID: 877849352974125140}
   _projectileSpeed: 18
+  _stopMovementDuringThrow: 0
+--- !u!114 &7647826597062955927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7616421622860669196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89067cfdf2c4c2b4497d3d72615e9590, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Woi.Ninja.Player.Services.PlayerAimProvider
+  _camera: {fileID: 0}
+  _playerRoot: {fileID: 805867139651526826}
 --- !u!1 &7959761998794972002
 GameObject:
   m_ObjectHideFlags: 0
