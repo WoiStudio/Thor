@@ -210,9 +210,9 @@ MonoBehaviour:
   _dash: {fileID: 9039648630979904664}
   _interaction: {fileID: 2585704045789700935}
   _combat: {fileID: 7630955396488170730}
-  _thrower: {fileID: 0}
-  _aimProvider: {fileID: 0}
-  _swordFeedback: {fileID: 0}
+  _thrower: {fileID: 3425306924707115244}
+  _aimProvider: {fileID: 7647826597062955927}
+  _swordFeedback: {fileID: 8979434065393471296}
 --- !u!114 &2585704045789700935
 MonoBehaviour:
   m_ObjectHideFlags: 0
