@@ -7,8 +7,8 @@ namespace Woi.Ninja.Core.Input
     /// Samples gameplay actions via the <b>new Input System</b>.
     /// </summary>
     /// <remarks>
-    /// <para><b>Recommended:</b> assign an <see cref="InputActionAsset"/> and define the <b>Gameplay</b> map with
-    /// <b>Move</b>, <b>Dash</b>, <b>Interact</b>, and <b>Attack</b>.</para>
+    /// <para>When an <see cref="InputActionAsset"/> is assigned, the <b>Gameplay</b> map should contain
+    /// <b>Move</b>, <b>Dash</b>, <b>Interact</b>, <b>Attack</b>, and <b>Throw</b>.</para>
     /// <para>If no asset is assigned, actions are built in code.</para>
     /// Requires package <c>com.unity.inputsystem</c>.
     /// </remarks>
@@ -29,6 +29,8 @@ namespace Woi.Ninja.Core.Input
 
         [SerializeField] private string _attackActionName = "Attack";
 
+        [SerializeField] private string _throwActionName = "Throw";
+
         [Header("Code fallback (no asset)")]
         [Tooltip("Only used when Input Action Asset is null.")]
         [SerializeField] private NinjaInputBindingProfile _bindingProfile;
@@ -40,12 +42,15 @@ namespace Woi.Ninja.Core.Input
         private InputAction _interactAction;
         private InputAction _attackAction;
 
+        private InputAction _throwAction;
+
         private bool _disposeActionsOnDestroy;
 
         private Vector2 _moveInput;
         private bool _dashPressed;
         private bool _interactPressed;
         private bool _attackPressed;
+        private bool _throwPressed;
 
         private InputDevice _lastInputDevice;
 
@@ -58,6 +63,8 @@ namespace Woi.Ninja.Core.Input
         public bool InteractPressed => _interactPressed;
 
         public bool AttackPressed => _attackPressed;
+
+        public bool ThrowPressed => _throwPressed;
 
         /// <summary>Device that most recently produced meaningful input this frame (for UI prompts).</summary>
         public InputDevice LastInputDeviceUsed => _lastInputDevice;
@@ -99,18 +106,22 @@ namespace Woi.Ninja.Core.Input
             _dashAction = map.FindAction(_dashActionName, throwIfNotFound: false);
             _interactAction = map.FindAction(_interactActionName, throwIfNotFound: false);
             _attackAction = map.FindAction(_attackActionName, throwIfNotFound: false);
+            _throwAction = map.FindAction(_throwActionName, throwIfNotFound: false);
 
-            if (_moveAction == null || _dashAction == null || _interactAction == null || _attackAction == null)
+            if (_moveAction == null || _dashAction == null || _interactAction == null || _attackAction == null
+                || _throwAction == null)
             {
                 Debug.LogError(
                     "[NinjaGameplayInputModule] Expected actions '" + _moveActionName + "', '" + _dashActionName +
-                    "', '" + _interactActionName + "', '" + _attackActionName + "' in map '" + _actionMapName +
-                    "'. Missing: " + DescribeMissing() + ". Falling back to code bindings.",
+                    "', '" + _interactActionName + "', '" + _attackActionName + "', '" + _throwActionName +
+                    "' in map '" + _actionMapName + "'. Missing: " + DescribeMissing() +
+                    ". Falling back to code bindings.",
                     this);
                 _moveAction = null;
                 _dashAction = null;
                 _interactAction = null;
                 _attackAction = null;
+                _throwAction = null;
                 BuildActionsInCode(NinjaResolvedBindings.BuiltIn);
                 _disposeActionsOnDestroy = true;
                 return;
@@ -126,6 +137,7 @@ namespace Woi.Ninja.Core.Input
             if (_dashAction == null) s += _dashActionName + " ";
             if (_interactAction == null) s += _interactActionName + " ";
             if (_attackAction == null) s += _attackActionName + " ";
+            if (_throwAction == null) s += _throwActionName + " ";
             return string.IsNullOrEmpty(s) ? "(none)" : s.TrimEnd();
         }
 
@@ -135,6 +147,7 @@ namespace Woi.Ninja.Core.Input
             _dashAction?.Enable();
             _interactAction?.Enable();
             _attackAction?.Enable();
+            _throwAction?.Enable();
         }
 
         private void OnDisable()
@@ -143,6 +156,7 @@ namespace Woi.Ninja.Core.Input
             _dashAction?.Disable();
             _interactAction?.Disable();
             _attackAction?.Disable();
+            _throwAction?.Disable();
         }
 
         private void OnDestroy()
@@ -167,12 +181,19 @@ namespace Woi.Ninja.Core.Input
             _dashPressed = _dashAction != null && _dashAction.WasPressedThisFrame();
             _interactPressed = _interactAction != null && _interactAction.WasPressedThisFrame();
             _attackPressed = _attackAction != null && _attackAction.WasPressedThisFrame();
+            _throwPressed = _throwAction != null && _throwAction.WasPressedThisFrame();
 
             UpdateLastDevice();
         }
 
         private void UpdateLastDevice()
         {
+            if (_throwPressed && _throwAction?.activeControl != null)
+            {
+                _lastInputDevice = _throwAction.activeControl.device;
+                return;
+            }
+
             if (_attackPressed && _attackAction?.activeControl != null)
             {
                 _lastInputDevice = _attackAction.activeControl.device;
@@ -238,6 +259,11 @@ namespace Woi.Ninja.Core.Input
             _attackAction.AddBinding("<Mouse>/leftButton");
             _attackAction.AddBinding("<Keyboard>/j");
             _attackAction.AddBinding("<Gamepad>/buttonNorth");
+
+            _throwAction = new InputAction("Throw", InputActionType.Button);
+            _throwAction.AddBinding("<Mouse>/rightButton");
+            _throwAction.AddBinding("<Keyboard>/k");
+            _throwAction.AddBinding("<Gamepad>/buttonEast");
         }
 
         private static void AddIfPresent(InputAction action, string path)
@@ -256,6 +282,8 @@ namespace Woi.Ninja.Core.Input
             _interactAction = null;
             _attackAction?.Dispose();
             _attackAction = null;
+            _throwAction?.Dispose();
+            _throwAction = null;
         }
     }
 }

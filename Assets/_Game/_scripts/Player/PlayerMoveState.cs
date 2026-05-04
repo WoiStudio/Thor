@@ -11,9 +11,10 @@ namespace Woi.Ninja.Player
             IPlayerDash dash,
             IPlayerInteraction interaction,
             IPlayerCombat combat,
+            IPlayerThrower thrower,
             StateMachine machine,
             PlayerStateRegistry registry)
-            : base(input, motor, dash, interaction, combat, machine, registry)
+            : base(input, motor, dash, interaction, combat, thrower, machine, registry)
         {
         }
 
@@ -22,6 +23,12 @@ namespace Woi.Ninja.Player
             if (Input.AttackPressed && Combat.CanAttack)
             {
                 Machine.SetState(Registry.Attack);
+                return;
+            }
+
+            if (Input.ThrowPressed && Thrower.CanThrow)
+            {
+                Machine.SetState(Registry.Throw);
                 return;
             }
 

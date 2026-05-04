@@ -14,6 +14,7 @@ namespace Woi.Ninja.Player
         [SerializeField] private PlayerDash _dash;
         [SerializeField] private PlayerInteraction _interaction;
         [SerializeField] private PlayerCombat _combat;
+        [SerializeField] private PlayerThrower _thrower;
 
         private StateMachine _stateMachine;
 
@@ -22,6 +23,7 @@ namespace Woi.Ninja.Player
         private PlayerDashState _dashState;
         private PlayerInteractState _interact;
         private PlayerAttackState _attack;
+        private PlayerThrowState _throw;
 
         public StateMachine StateMachine => _stateMachine;
 
@@ -80,6 +82,13 @@ namespace Woi.Ninja.Player
                 return false;
             }
 
+            if (!TryResolve(ref _thrower))
+            {
+                LogMissingService(nameof(PlayerThrower));
+                enabled = false;
+                return false;
+            }
+
             return true;
         }
 
@@ -89,17 +98,19 @@ namespace Woi.Ninja.Player
 
             var registry = new PlayerStateRegistry();
 
-            _idle = new PlayerIdleState(_inputReader, _motor, _dash, _interaction, _combat, _stateMachine, registry);
-            _move = new PlayerMoveState(_inputReader, _motor, _dash, _interaction, _combat, _stateMachine, registry);
-            _dashState = new PlayerDashState(_inputReader, _motor, _dash, _interaction, _combat, _stateMachine, registry);
-            _interact = new PlayerInteractState(_inputReader, _motor, _dash, _interaction, _combat, _stateMachine, registry);
-            _attack = new PlayerAttackState(_inputReader, _motor, _dash, _interaction, _combat, _stateMachine, registry);
+            _idle = new PlayerIdleState(_inputReader, _motor, _dash, _interaction, _combat, _thrower, _stateMachine, registry);
+            _move = new PlayerMoveState(_inputReader, _motor, _dash, _interaction, _combat, _thrower, _stateMachine, registry);
+            _dashState = new PlayerDashState(_inputReader, _motor, _dash, _interaction, _combat, _thrower, _stateMachine, registry);
+            _interact = new PlayerInteractState(_inputReader, _motor, _dash, _interaction, _combat, _thrower, _stateMachine, registry);
+            _attack = new PlayerAttackState(_inputReader, _motor, _dash, _interaction, _combat, _thrower, _stateMachine, registry);
+            _throw = new PlayerThrowState(_inputReader, _motor, _dash, _interaction, _combat, _thrower, _stateMachine, registry);
 
             registry.Idle = _idle;
             registry.Move = _move;
             registry.Dash = _dashState;
             registry.Interact = _interact;
             registry.Attack = _attack;
+            registry.Throw = _throw;
             registry.PlayerTransform = transform;
 
             _stateMachine.SetState(_idle);

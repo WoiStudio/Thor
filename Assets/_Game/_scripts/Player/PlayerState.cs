@@ -14,6 +14,7 @@ namespace Woi.Ninja.Player
             IPlayerDash dash,
             IPlayerInteraction interaction,
             IPlayerCombat combat,
+            IPlayerThrower thrower,
             StateMachine machine,
             PlayerStateRegistry registry)
         {
@@ -22,6 +23,7 @@ namespace Woi.Ninja.Player
             Dash = dash;
             Interaction = interaction;
             Combat = combat;
+            Thrower = thrower;
             Machine = machine;
             Registry = registry;
         }
@@ -35,6 +37,8 @@ namespace Woi.Ninja.Player
         protected IPlayerInteraction Interaction { get; }
 
         protected IPlayerCombat Combat { get; }
+
+        protected IPlayerThrower Thrower { get; }
 
         protected StateMachine Machine { get; }
 

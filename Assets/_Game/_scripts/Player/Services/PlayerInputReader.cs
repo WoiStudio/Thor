@@ -33,5 +33,7 @@ namespace Woi.Ninja.Player.Services
         public bool InteractPressed => _gameplayInput != null && _gameplayInput.InteractPressed;
 
         public bool AttackPressed => _gameplayInput != null && _gameplayInput.AttackPressed;
+
+        public bool ThrowPressed => _gameplayInput != null && _gameplayInput.ThrowPressed;
     }
 }

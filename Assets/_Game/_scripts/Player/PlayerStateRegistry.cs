@@ -18,6 +18,8 @@ namespace Woi.Ninja.Player
 
         public PlayerAttackState Attack { get; set; }
 
+        public PlayerThrowState Throw { get; set; }
+
         /// <summary>Used for dash direction fallback when move input is below epsilon.</summary>
         public Transform PlayerTransform { get; set; }
     }

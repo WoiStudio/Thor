@@ -12,9 +12,10 @@ namespace Woi.Ninja.Player
             IPlayerDash dash,
             IPlayerInteraction interaction,
             IPlayerCombat combat,
+            IPlayerThrower thrower,
             StateMachine machine,
             PlayerStateRegistry registry)
-            : base(input, motor, dash, interaction, combat, machine, registry)
+            : base(input, motor, dash, interaction, combat, thrower, machine, registry)
         {
         }
 

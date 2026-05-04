@@ -3,7 +3,7 @@ using UnityEngine;
 namespace Woi.Ninja.Core.Input
 {
     /// <summary>
-    /// Frame snapshot for top-down gameplay (move, dash, interact, attack).
+    /// Frame snapshot for top-down gameplay (move, dash, interact, attack, throw).
     /// Implemented by <see cref="NinjaGameplayInputModule"/> and consumed by <see cref="Player.Services.PlayerInputReader"/>.
     /// </summary>
     public interface INinjaGameplayInput
@@ -17,5 +17,7 @@ namespace Woi.Ninja.Core.Input
         bool InteractPressed { get; }
 
         bool AttackPressed { get; }
+
+        bool ThrowPressed { get; }
     }
 }

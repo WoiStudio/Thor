@@ -127,6 +127,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Throw"",
+                    ""type"": ""Button"",
+                    ""id"": ""b9f03eaa-4d21-4f8e-b001-aabbccddeeff"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -217,6 +226,39 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d1e2f3a4-b5c6-4789-d012-ef0123456789"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Throw"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e2f3a4b5-c6d7-4890-e123-f456789abcde"",
+                    ""path"": ""<Keyboard>/k"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Throw"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f3a4b5c6-d7e8-4901-f234-56789abcdef0"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Throw"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -229,6 +271,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Gameplay_Dash = m_Gameplay.FindAction("Dash", throwIfNotFound: true);
         m_Gameplay_Interact = m_Gameplay.FindAction("Interact", throwIfNotFound: true);
         m_Gameplay_Attack = m_Gameplay.FindAction("Attack", throwIfNotFound: true);
+        m_Gameplay_Throw = m_Gameplay.FindAction("Throw", throwIfNotFound: true);
     }
 
     ~@PlayerInputActions()
@@ -313,6 +356,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Dash;
     private readonly InputAction m_Gameplay_Interact;
     private readonly InputAction m_Gameplay_Attack;
+    private readonly InputAction m_Gameplay_Throw;
     /// <summary>
     /// Provides access to input actions defined in input action map "Gameplay".
     /// </summary>
@@ -340,6 +384,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Gameplay/Attack".
         /// </summary>
         public InputAction @Attack => m_Wrapper.m_Gameplay_Attack;
+        /// <summary>
+        /// Provides access to the underlying input action "Gameplay/Throw".
+        /// </summary>
+        public InputAction @Throw => m_Wrapper.m_Gameplay_Throw;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -378,6 +426,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Attack.started += instance.OnAttack;
             @Attack.performed += instance.OnAttack;
             @Attack.canceled += instance.OnAttack;
+            @Throw.started += instance.OnThrow;
+            @Throw.performed += instance.OnThrow;
+            @Throw.canceled += instance.OnThrow;
         }
 
         /// <summary>
@@ -401,6 +452,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Attack.started -= instance.OnAttack;
             @Attack.performed -= instance.OnAttack;
             @Attack.canceled -= instance.OnAttack;
+            @Throw.started -= instance.OnThrow;
+            @Throw.performed -= instance.OnThrow;
+            @Throw.canceled -= instance.OnThrow;
         }
 
         /// <summary>
@@ -469,5 +523,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnAttack(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Throw" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnThrow(InputAction.CallbackContext context);
     }
 }

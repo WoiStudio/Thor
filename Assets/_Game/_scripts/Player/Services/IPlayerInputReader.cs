@@ -16,5 +16,7 @@ namespace Woi.Ninja.Player.Services
         bool InteractPressed { get; }
 
         bool AttackPressed { get; }
+
+        bool ThrowPressed { get; }
     }
 }
