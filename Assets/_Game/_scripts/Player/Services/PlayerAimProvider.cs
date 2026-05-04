@@ -5,6 +5,8 @@ namespace Woi.Ninja.Player.Services
 {
     /// <summary>
     /// Raycasts mouse through a serialized camera onto the XZ plane at the player's Y.
+    /// Aim exposed to gameplay is <b>snapshotted each physics step</b> so movement/lunge in <c>FixedUpdate</c>
+    /// does not fight per-frame <c>Update</c> mouse jitter.
     /// </summary>
     [DefaultExecutionOrder(-40)]
     public sealed class PlayerAimProvider : MonoBehaviour, IPlayerAimProvider
@@ -17,39 +19,41 @@ namespace Woi.Ninja.Player.Services
 
         [SerializeField] private Transform _playerRoot;
 
-        private bool _hasAim;
+        private bool _fixedHasAim;
 
-        private Vector3 _aimDirection;
+        private Vector3 _fixedAimDirection;
 
-        private Vector3 _aimWorldPoint;
+        private Vector3 _fixedAimWorldPoint;
 
-        public bool HasAimDirection => _hasAim;
+        public bool HasAimDirection => _fixedHasAim;
 
-        public Vector3 AimDirection => _aimDirection;
+        public Vector3 AimDirection => _fixedAimDirection;
 
-        public Vector3 AimWorldPoint => _aimWorldPoint;
+        public Vector3 AimWorldPoint => _fixedAimWorldPoint;
 
         public void SampleAimNow()
         {
-            RefreshAim();
+            ComputeAndWriteFixedSnapshot();
         }
 
         private void Awake()
         {
             if (_playerRoot == null)
                 _playerRoot = transform;
+
+            ComputeAndWriteFixedSnapshot();
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
-            RefreshAim();
+            ComputeAndWriteFixedSnapshot();
         }
 
-        private void RefreshAim()
+        private void ComputeAndWriteFixedSnapshot()
         {
-            _hasAim = false;
-            _aimDirection = Vector3.zero;
-            _aimWorldPoint = Vector3.zero;
+            _fixedHasAim = false;
+            _fixedAimDirection = Vector3.zero;
+            _fixedAimWorldPoint = Vector3.zero;
 
             if (_camera == null || _playerRoot == null)
                 return;
@@ -77,9 +81,9 @@ namespace Woi.Ninja.Player.Services
             if (fromPlayer.sqrMagnitude < MinAimSqr)
                 return;
 
-            _hasAim = true;
-            _aimWorldPoint = hit;
-            _aimDirection = fromPlayer.normalized;
+            _fixedHasAim = true;
+            _fixedAimWorldPoint = hit;
+            _fixedAimDirection = fromPlayer.normalized;
         }
     }
 }

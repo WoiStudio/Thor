@@ -4,6 +4,7 @@ namespace Woi.Ninja.Player.Services
 {
     /// <summary>
     /// Top-down mouse aim on the XZ plane at the player's height.
+    /// Read <see cref="AimDirection"/> / <see cref="HasAimDirection"/> use a physics-step snapshot (see <see cref="PlayerAimProvider"/>).
     /// </summary>
     public interface IPlayerAimProvider
     {
@@ -14,7 +15,7 @@ namespace Woi.Ninja.Player.Services
         Vector3 AimWorldPoint { get; }
 
         /// <summary>
-        /// Recomputes aim immediately (e.g. before attack <c>Enter</c> so the first frame has valid data).
+        /// Recomputes the fixed-step aim snapshot immediately (e.g. attack <c>Enter</c> before physics runs).
         /// </summary>
         void SampleAimNow();
     }

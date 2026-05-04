@@ -29,6 +29,8 @@ namespace Woi.Ninja.Player.Services
 
         private float _worldMoveSpeed;
 
+        private bool _hadMeaningfulPlanarMoveLastFixed;
+
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody>();
@@ -134,6 +136,7 @@ namespace Woi.Ninja.Player.Services
             _worldMoveMode = false;
             _planarInput = Vector2.zero;
             _speedMultiplier = 1f;
+            _hadMeaningfulPlanarMoveLastFixed = false;
             if (_rigidbody == null)
                 return;
 
@@ -155,17 +158,28 @@ namespace Woi.Ninja.Player.Services
             var dir = new Vector3(_planarInput.x, 0f, _planarInput.y);
             var sq = dir.sqrMagnitude;
             if (sq < _inputEpsilon * _inputEpsilon)
+            {
+                _hadMeaningfulPlanarMoveLastFixed = false;
                 return;
+            }
 
             if (sq > 1f)
                 dir.Normalize();
 
             float speed = _moveSpeed * _speedMultiplier;
             var deltaInput = dir * (speed * Time.fixedDeltaTime);
+
+            bool wasMovingPlanar = _hadMeaningfulPlanarMoveLastFixed;
+
+            if (rotateTowardMovement && !wasMovingPlanar)
+                _rigidbody.MoveRotation(Quaternion.LookRotation(dir.normalized));
+
             _rigidbody.MovePosition(_rigidbody.position + deltaInput);
 
-            if (rotateTowardMovement)
+            if (rotateTowardMovement && wasMovingPlanar)
                 FaceDirection(dir);
+
+            _hadMeaningfulPlanarMoveLastFixed = true;
         }
 
         private void FaceDirection(Vector3 directionXZ)

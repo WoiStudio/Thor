@@ -1,3 +1,4 @@
+using UnityEngine;
 using Woi.Ninja.Core.StateMachine;
 using Woi.Ninja.Player.Services;
 
@@ -11,6 +12,10 @@ namespace Woi.Ninja.Player
         private readonly IPlayerAimProvider _aimProvider;
 
         private readonly IPlayerSwordFeedback _swordFeedback;
+
+        private bool _lockedLungeAimValid;
+
+        private Vector3 _lockedLungeAimDir;
 
         public PlayerAttackState(
             IPlayerInputReader input,
@@ -31,6 +36,8 @@ namespace Woi.Ninja.Player
 
         public override void Enter()
         {
+            ClearLungeAimLock();
+
             SnapFacingToCurrentAim();
 
             Motor.Stop();
@@ -41,6 +48,7 @@ namespace Woi.Ninja.Player
 
         public override void Exit()
         {
+            ClearLungeAimLock();
             Combat.ClearAttackFinishedFlag();
         }
 
@@ -58,6 +66,7 @@ namespace Woi.Ninja.Player
 
             if (Combat.TryBeginQueuedAttack())
             {
+                ClearLungeAimLock();
                 SnapFacingToCurrentAim();
                 Motor.Stop();
                 Input.ClearAttackInputBuffer();
@@ -82,27 +91,60 @@ namespace Woi.Ninja.Player
                 Motor.FaceWorldDirectionImmediate(_aimProvider.AimDirection);
         }
 
+        private void ClearLungeAimLock()
+        {
+            _lockedLungeAimValid = false;
+            _lockedLungeAimDir = Vector3.zero;
+        }
+
+        private bool TryGetLockedLungeAimDirection(out Vector3 dir)
+        {
+            if (_lockedLungeAimValid)
+            {
+                dir = _lockedLungeAimDir;
+                return true;
+            }
+
+            _aimProvider.SampleAimNow();
+            if (!_aimProvider.HasAimDirection)
+            {
+                dir = Vector3.zero;
+                return false;
+            }
+
+            _lockedLungeAimDir = _aimProvider.AimDirection;
+            _lockedLungeAimValid = true;
+            dir = _lockedLungeAimDir;
+            return true;
+        }
+
         public override void FixedTick()
         {
             if (Combat.IsInComboRecoveryBuffer)
             {
+                ClearLungeAimLock();
                 Motor.Move(Input.MoveInput);
                 Motor.ApplyFixedMovement(false);
                 return;
             }
 
             if (!Combat.IsAttacking)
+            {
+                ClearLungeAimLock();
                 return;
+            }
 
             ComboStepData? stepNullable = Combat.CurrentStep;
             if (stepNullable == null)
             {
+                ClearLungeAimLock();
                 Motor.Stop();
                 return;
             }
 
             if (!Combat.IsInMovementWindow)
             {
+                ClearLungeAimLock();
                 Motor.Stop();
                 return;
             }
@@ -112,10 +154,12 @@ namespace Woi.Ninja.Player
             switch (step.MovementMode)
             {
                 case AttackMovementMode.None:
+                    ClearLungeAimLock();
                     Motor.Stop();
                     break;
 
                 case AttackMovementMode.InputOnly:
+                    ClearLungeAimLock();
                     if (Input.HasMoveInput)
                     {
                         Motor.Move(Input.MoveInput, step.InputMovementMultiplier);
@@ -129,13 +173,14 @@ namespace Woi.Ninja.Player
                     break;
 
                 case AttackMovementMode.AimOnly:
-                    if (_aimProvider.HasAimDirection)
+                    if (TryGetLockedLungeAimDirection(out var aimDirOnly))
                     {
-                        Motor.MoveWorldDirection(_aimProvider.AimDirection, step.AimMovementSpeed);
+                        Motor.MoveWorldDirection(aimDirOnly, step.AimMovementSpeed);
                         Motor.ApplyFixedMovement(false);
                     }
                     else
                     {
+                        ClearLungeAimLock();
                         Motor.Stop();
                     }
 
@@ -144,16 +189,18 @@ namespace Woi.Ninja.Player
                 case AttackMovementMode.InputOrAimFallback:
                     if (Input.HasMoveInput)
                     {
+                        ClearLungeAimLock();
                         Motor.Move(Input.MoveInput, step.InputMovementMultiplier);
                         Motor.ApplyFixedMovement(false);
                     }
-                    else if (_aimProvider.HasAimDirection)
+                    else if (TryGetLockedLungeAimDirection(out var aimDirFb))
                     {
-                        Motor.MoveWorldDirection(_aimProvider.AimDirection, step.AimMovementSpeed);
+                        Motor.MoveWorldDirection(aimDirFb, step.AimMovementSpeed);
                         Motor.ApplyFixedMovement(false);
                     }
                     else
                     {
+                        ClearLungeAimLock();
                         Motor.Stop();
                     }
 
