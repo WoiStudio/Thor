@@ -5,7 +5,7 @@ using Woi.Ninja.Player.Services;
 namespace Woi.Ninja.Player
 {
     /// <summary>
-    /// Ranged throw; movement locked until throw timing completes.
+    /// Ranged throw; optional movement lock for the throw window (see <see cref="IPlayerThrower.StopMovementDuringThrow"/>).
     /// </summary>
     public sealed class PlayerThrowState : PlayerState
     {
@@ -24,7 +24,8 @@ namespace Woi.Ninja.Player
 
         public override void Enter()
         {
-            Motor.Stop();
+            if (Thrower.StopMovementDuringThrow)
+                Motor.Stop();
 
             Vector3 forward = Registry.PlayerTransform != null
                 ? Registry.PlayerTransform.forward
@@ -55,6 +56,15 @@ namespace Woi.Ninja.Player
                 Machine.SetState(Registry.Move);
             else
                 Machine.SetState(Registry.Idle);
+        }
+
+        public override void FixedTick()
+        {
+            if (Thrower.StopMovementDuringThrow)
+                return;
+
+            Motor.Move(Input.MoveInput);
+            Motor.ApplyFixedMovement();
         }
     }
 }

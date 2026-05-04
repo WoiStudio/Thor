@@ -13,6 +13,12 @@ namespace Woi.Ninja.Player.Services
 
         bool HasThrowFinished { get; }
 
+        /// <summary>
+        /// When true, throw state stops the motor on enter (player stands still while throwing).
+        /// When false, planar movement continues during the throw window.
+        /// </summary>
+        bool StopMovementDuringThrow { get; }
+
         /// <returns>False if throw did not start (cannot throw right now).</returns>
         bool BeginThrow(Vector3 direction);
 

@@ -18,6 +18,10 @@ namespace Woi.Ninja.Player.Services
 
         [SerializeField] [Min(0f)] private float _projectileSpeed = 18f;
 
+        [Header("Movement")]
+        [Tooltip("When enabled, the player stops while throwing. When disabled, move input still applies during throw.")]
+        [SerializeField] private bool _stopMovementDuringThrow = true;
+
         private float _segmentTimer;
 
         private bool _isThrowing;
@@ -32,6 +36,8 @@ namespace Woi.Ninja.Player.Services
         public bool IsThrowing => _isThrowing;
 
         public bool HasThrowFinished => _throwFinishedLatch;
+
+        public bool StopMovementDuringThrow => _stopMovementDuringThrow;
 
         public bool BeginThrow(Vector3 direction)
         {
