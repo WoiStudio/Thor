@@ -33,8 +33,8 @@ namespace AmplifyShaderEditor
 		private const string HDSampleBufferTitle = "HD Sample Buffer";
 		private const string SourceBufferLabel = "Source Buffer";
 
-		private const string ErrorOnCompilationMsg = "Attempting to use HDRP specific node on incorrect SRP or Builtin RP.";
-		private const string NodeVersionErrorMsg = "This node requires Unity 2022.3/HDRP v14 or higher";
+		private const string ErrorOnCompilationMsg = "\"HD Sample Buffer\" node requires HDRP.";
+		private const string NodeVersionErrorMsg = "\"HD Sample Buffer\" node requires Unity 2022.3/HDRP v14 or higher";
 		private const string NodeSRPErrorMsg = "Only valid on HDRP";
 
 		private class SourceBufferConfig
@@ -145,7 +145,7 @@ namespace AmplifyShaderEditor
 					functionReturnFormat = WirePortDataType.FLOAT4
 			} },
 
-			// HDRP 17+
+			// HDRP 15+
 			{ SourceBufferOption.RenderingLayerMask, new SourceBufferConfig() {
 					optionName = "Rendering Layer Mask",
 					output0Label = "Rendering Layer Mask",
@@ -196,7 +196,11 @@ namespace AmplifyShaderEditor
 						"float HDSampleBuffer_IsUnderWater( float2 uv, int layerID = 0 )\n",
 						"{\n",
 							"\tuint2 pixelCoords = uint2( uv * _ScreenSize.xy );\n",
+							"#if ( UNITY_VERSION >= 202320 )\n",
 							"\treturn _UnderWaterSurfaceIndex != -1 ? GetUnderWaterDistance( pixelCoords ) : 1.0f;\n",
+							"#else\n",
+							"\treturn _EnableUnderwater ? GetUnderWaterDistance( pixelCoords ) : 1.0f;\n",
+							"#endif\n",
 						"}\n"
 					}
 			} },
@@ -213,7 +217,7 @@ namespace AmplifyShaderEditor
 		};
 
 		// HDRP 17+
-		private static readonly SourceBufferOption[] SourceBufferOptions17p =
+		private static readonly SourceBufferOption[] SourceBufferOptions15p =
 		{
 			SourceBufferOption.NormalWS,
 			SourceBufferOption.Smoothness,
@@ -226,7 +230,20 @@ namespace AmplifyShaderEditor
 		};
 
 		private string[] m_sourceBufferOptions;
-		private string[] SourceBufferOptions { get { return m_sourceBufferOptions = ( m_sourceBufferOptions == null ) ? UpdateOptions() : m_sourceBufferOptions; } }
+		private string[] SourceBufferOptions
+		{
+			get
+			{
+				if ( m_sourceBufferOptions == null )
+				{
+					return UpdateOptions( ContainerGraph.CurrentCanvasMode == NodeAvailability.ShaderFunction );
+				}
+				else
+				{
+					return m_sourceBufferOptions;
+				}
+			}
+		}
 
 		protected override void CommonInit( int uniqueId )
 		{
@@ -246,12 +263,12 @@ namespace AmplifyShaderEditor
 			UpdatePorts();
 		}
 
-		private static string[] UpdateOptions()
+		private static string[] UpdateOptions( bool isFunction )
 		{
 			var optionsByVersion = new SourceBufferOption[ 0 ];
-			if ( ASEPackageManagerHelper.PackageSRPVersion >= ( int )ASESRPBaseline.ASE_SRP_17_0 )
+			if ( isFunction || ASEPackageManagerHelper.PackageSRPVersion >= ( int )SRPBaseline.ASE_SRP_15_X )
 			{
-				optionsByVersion = SourceBufferOptions17p;
+				optionsByVersion = SourceBufferOptions15p;
 			}
 			else
 			{
@@ -312,7 +329,15 @@ namespace AmplifyShaderEditor
 		{
 			if ( !dataCollector.IsSRP || !dataCollector.TemplateDataCollectorInstance.IsHDRP )
 			{
-				UIUtils.ShowMessage( ErrorOnCompilationMsg , MessageSeverity.Error );
+				UIUtils.ShowMessage( ErrorOnCompilationMsg, MessageSeverity.Error );
+				return GenerateErrorValue();
+			}
+
+			bool requiresExtendedOptions15p = m_sourceBuffer >= SourceBufferOption.RenderingLayerMask;
+			bool allowsExtendedOptions15p = ASEPackageManagerHelper.PackageSRPVersion >= ( int )SRPBaseline.ASE_SRP_15_X;
+			if ( requiresExtendedOptions15p && !allowsExtendedOptions15p )
+			{
+				UIUtils.ShowMessage( NodeVersionErrorMsg, MessageSeverity.Warning );
 				return GenerateErrorValue();
 			}
 
@@ -344,6 +369,10 @@ namespace AmplifyShaderEditor
 				{
 					dataCollector.AddToIncludes( UniqueId, "Packages/com.unity.render-pipelines.high-definition/Runtime/Material/NormalBuffer.hlsl" );
 				}
+				else if ( m_sourceBuffer == SourceBufferOption.IsUnderWater )
+				{
+					dataCollector.AddToIncludes( UniqueId, "Packages/com.unity.render-pipelines.high-definition/Runtime/Water/Shaders/UnderWaterUtilities.hlsl" );
+				}
 
 				dataCollector.AddFunction( source.function[ 0 ], source.function, false );
 
@@ -360,13 +389,12 @@ namespace AmplifyShaderEditor
 		{
 			base.OnNodeLogicUpdate( drawInfo );
 
-			bool isHDRP = ( ContainerGraph.CurrentCanvasMode == NodeAvailability.TemplateShader && ContainerGraph.CurrentSRPType == TemplateSRPType.HDRP );
-			bool isWrongHDRP = isHDRP && ( ASEPackageManagerHelper.PackageSRPVersion < ( int )ASESRPBaseline.ASE_SRP_14_X );
+			bool isTemplate = ( ContainerGraph.CurrentCanvasMode == NodeAvailability.TemplateShader );
+			bool isSurface = ( ContainerGraph.CurrentCanvasMode == NodeAvailability.SurfaceShader );
+			bool isHDRP = ( ContainerGraph.CurrentSRPType == TemplateSRPType.HDRP );
+			bool isWrongHDRP = isTemplate && isHDRP && ( ASEPackageManagerHelper.PackageSRPVersion < ( int )SRPBaseline.ASE_SRP_14_X );
 
-			m_showErrorMessage = ( ContainerGraph.CurrentCanvasMode == NodeAvailability.SurfaceShader ) ||
-								 ( ContainerGraph.CurrentCanvasMode == NodeAvailability.TemplateShader && ContainerGraph.CurrentSRPType != TemplateSRPType.HDRP ) ||
-								 isWrongHDRP;
-
+			m_showErrorMessage = isSurface || ( isTemplate && !isHDRP ) || isWrongHDRP;
 			if ( m_showErrorMessage )
 			{
 				if ( isWrongHDRP )

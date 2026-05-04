@@ -2531,14 +2531,6 @@ namespace AmplifyShaderEditor
 						}
 					}
 				}
-
-				if ( m_templateMultiPass.AvailableShaderProperties.Find( x => x.PropertyName.Equals( "_EmissionColor" ) ) == null )
-				{
-					if( !currDataCollector.ContainsProperty( "_EmissionColor" ) )
-					{
-						currDataCollector.AddToProperties( UniqueId, "[HideInInspector] _EmissionColor(\"Emission Color\", Color) = (1,1,1,1)", -1 );
-					}
-				}
 			}
 
 			m_templateMultiPass.SetPropertyData( currDataCollector.BuildUnformatedPropertiesStringArr() );
@@ -3284,8 +3276,7 @@ namespace AmplifyShaderEditor
 
 		void CheckLegacyCustomInspectors()
 		{
-#if UNITY_2021_2_OR_NEWER
-			if( m_templateMultiPass.SubShaders[ 0 ].Modules.SRPType == TemplateSRPType.HDRP && ASEPackageManagerHelper.CurrentHDRPBaseline >= ASESRPBaseline.ASE_SRP_11_X )
+			if( m_templateMultiPass.SubShaders[ 0 ].Modules.SRPType == TemplateSRPType.HDRP )
 			{
 				if( Constants.CustomInspectorHDLegacyTo11.ContainsKey( m_customInspectorName ) )
 				{
@@ -3294,7 +3285,7 @@ namespace AmplifyShaderEditor
 				}
 			}
 
-			if( m_templateMultiPass.SubShaders[ 0 ].Modules.SRPType == TemplateSRPType.URP && ASEPackageManagerHelper.CurrentURPBaseline>= ASESRPBaseline.ASE_SRP_12_X )
+			if( m_templateMultiPass.SubShaders[ 0 ].Modules.SRPType == TemplateSRPType.URP )
 			{
 				if( Constants.CustomInspectorURP10To12.ContainsKey( m_customInspectorName ) )
 				{
@@ -3316,26 +3307,6 @@ namespace AmplifyShaderEditor
 				}
 
 			}
-
-#elif UNITY_2021_1_OR_NEWER
-			if( m_templateMultiPass.SubShaders[ 0 ].Modules.SRPType == TemplateSRPType.HDRP && ASEPackageManagerHelper.CurrentHDRPBaseline >= ASESRPBaseline.ASE_SRP_11_X )
-			{
-				if( Constants.CustomInspectorHDLegacyTo11.ContainsKey( m_customInspectorName ) )
-				{
-					UIUtils.ShowMessage( string.Format( "Detected obsolete custom inspector '{0}' in shader meta. Converting to new one '{1}'" , m_customInspectorName , Constants.CustomInspectorHDLegacyTo11[ m_customInspectorName ] ) , MessageSeverity.Warning );
-					m_customInspectorName = Constants.CustomInspectorHDLegacyTo11[ m_customInspectorName ];
-				}
-			}
-#elif UNITY_2020_2_OR_NEWER
-			if(  m_templateMultiPass.SubShaders[0].Modules.SRPType == TemplateSRPType.HDRP && ASEPackageManagerHelper.CurrentHDRPBaseline >= ASESRPBaseline.ASE_SRP_10_X )
-			{
-				if( Constants.CustomInspectorHD7To10.ContainsKey( m_customInspectorName ) )
-				{
-					UIUtils.ShowMessage( string.Format("Detected obsolete custom inspector '{0}' in shader meta. Converting to new one '{1}'", m_customInspectorName , Constants.CustomInspectorHD7To10[ m_customInspectorName ] ), MessageSeverity.Warning );
-					m_customInspectorName = Constants.CustomInspectorHD7To10[ m_customInspectorName ];
-				}
-			}
-#endif
 		}
 
 		public override void WriteToString( ref string nodeInfo , ref string connectionsInfo )

@@ -293,7 +293,7 @@ namespace AmplifyShaderEditor
 					GenericMenu menu = new GenericMenu();
 					AddMenuItem( menu, Constants.DefaultCustomInspector );
 
-					ASESRPBaseline version = ASESRPBaseline.ASE_SRP_INVALID;
+					SRPBaseline version = SRPBaseline.ASE_SRP_INVALID;
 					bool foundHDRP = ASEPackageManagerHelper.FoundHDRPVersion;
 					bool foundURP = ASEPackageManagerHelper.FoundURPVersion;
 
@@ -312,47 +312,18 @@ namespace AmplifyShaderEditor
 
 					if( foundHDRP )
 					{
-						if( version >= ASESRPBaseline.ASE_SRP_11_X )
-						{
-							AddMenuItem( menu , "Rendering.HighDefinition.DecalShaderGraphGUI" );
-							AddMenuItem( menu , "Rendering.HighDefinition.LightingShaderGraphGUI" );
-							AddMenuItem( menu , "Rendering.HighDefinition.LitShaderGraphGUI" );
-							AddMenuItem( menu , "Rendering.HighDefinition.HDUnlitGUI" );
-						}
-						else
-						if( version >= ASESRPBaseline.ASE_SRP_10_X )
-						{
-							AddMenuItem( menu , "Rendering.HighDefinition.DecalGUI" );
-							AddMenuItem( menu , "Rendering.HighDefinition.LitShaderGraphGUI" );
-							AddMenuItem( menu , "Rendering.HighDefinition.LightingShaderGraphGUI" );
-							AddMenuItem( menu , "Rendering.HighDefinition.HDUnlitGUI" );
-						}
-						else if( version >= ASESRPBaseline.ASE_SRP_12_X )
-						{
-							AddMenuItem( menu , "Rendering.HighDefinition.DecalGUI" );
-							AddMenuItem( menu , "Rendering.HighDefinition.LitShaderGraphGUI" );
-							AddMenuItem( menu , "Rendering.HighDefinition.LightingShaderGraphGUI" );
-							AddMenuItem( menu , "Rendering.HighDefinition.HDUnlitGUI" );
-						}
-						else
-						{
-							AddMenuItem( menu , "UnityEditor.Rendering.HighDefinition.HDLitGUI" );
-						}
+						AddMenuItem( menu , "Rendering.HighDefinition.LitShaderGraphGUI" );
+						AddMenuItem( menu , "Rendering.HighDefinition.UnlitShaderGraphGUI" );
+						AddMenuItem( menu , "Rendering.HighDefinition.DecalShaderGraphGUI" );
+						AddMenuItem( menu , "Rendering.HighDefinition.LightingShaderGraphGUI" );
+
 					}
 
 					if( foundURP )
 					{
-						if( version >= ASESRPBaseline.ASE_SRP_12_X )
-						{
-							AddMenuItem( menu , "UnityEditor.ShaderGraphLitGUI" );
-							AddMenuItem( menu , "UnityEditor.ShaderGraphUnlitGUI" );
-							AddMenuItem( menu , "UnityEditor.Rendering.Universal.DecalShaderGraphGUI" );
-							AddMenuItem( menu , "UnityEditor.ShaderGraphLitGUI" );
-						}
-						else
-						{
-							AddMenuItem( menu , "UnityEditor.ShaderGraph.PBRMasterGUI" );
-						}
+						AddMenuItem( menu , "UnityEditor.ShaderGraphLitGUI" );
+						AddMenuItem( menu , "UnityEditor.ShaderGraphUnlitGUI" );
+						AddMenuItem( menu , "UnityEditor.Rendering.Universal.DecalShaderGraphGUI" );
 					}
 					menu.ShowAsContext();
 				}

@@ -167,36 +167,11 @@ namespace AmplifyShaderEditor
 					pragmas.Add( "multi_compile_fragment _ _SHADOWS_SOFT _SHADOWS_SOFT_LOW _SHADOWS_SOFT_MEDIUM _SHADOWS_SOFT_HIGH" );
 				}
 			}
-			else if ( ASEPackageManagerHelper.CurrentURPBaseline >= ASESRPBaseline.ASE_SRP_14_X )
-			{
-				if ( isForward || isGBuffer )
-				{
-					pragmas.Add( "multi_compile _ _MAIN_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS_CASCADE _MAIN_LIGHT_SHADOWS_SCREEN" );
-					pragmas.Add( "multi_compile_fragment _ _SHADOWS_SOFT" );
-				}
-			}
-			else if ( ASEPackageManagerHelper.CurrentURPBaseline >= ASESRPBaseline.ASE_SRP_12_X )
-			{
-				if ( isForward || isGBuffer )
-				{
-					pragmas.Add( "multi_compile _ _MAIN_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS_CASCADE _MAIN_LIGHT_SHADOWS_SCREEN" );
-					pragmas.Add( "multi_compile_fragment _ _SHADOWS_SOFT" );
-				}
-			}
-			else if ( ASEPackageManagerHelper.CurrentURPBaseline >= ASESRPBaseline.ASE_SRP_11_X )
-			{
-				if ( isForward || isGBuffer )
-				{
-					pragmas.Add( "multi_compile _ _MAIN_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS_CASCADE _MAIN_LIGHT_SHADOWS_SCREEN" );
-					pragmas.Add( "multi_compile_fragment _ _SHADOWS_SOFT" );
-				}
-			}
 			else
 			{
 				if ( isForward || isGBuffer )
 				{
-					pragmas.Add( "multi_compile _ _MAIN_LIGHT_SHADOWS" );
-					pragmas.Add( "multi_compile _ _MAIN_LIGHT_SHADOWS_CASCADE" );
+					pragmas.Add( "multi_compile _ _MAIN_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS_CASCADE _MAIN_LIGHT_SHADOWS_SCREEN" );
 					pragmas.Add( "multi_compile_fragment _ _SHADOWS_SOFT" );
 				}
 			}
@@ -211,7 +186,7 @@ namespace AmplifyShaderEditor
 		{
 			m_currentDataCollector.AddToIncludes( UniqueId, "Packages/com.unity.render-pipelines.high-definition/Runtime/Lighting/LightLoop/HDShadow.hlsl" );
 
-			if ( ASEPackageManagerHelper.CurrentHDRPBaseline >= ASESRPBaseline.ASE_SRP_16_X )
+			if ( ASEPackageManagerHelper.CurrentHDRPBaseline >= SRPBaseline.ASE_SRP_16_X )
 			{
 				m_currentDataCollector.AddToDirectives(
 					"#if !defined( PUNCTUAL_SHADOW_LOW ) && !defined( PUNCTUAL_SHADOW_MEDIUM ) && !defined( PUNCTUAL_SHADOW_HIGH )\n" +
@@ -1577,8 +1552,8 @@ namespace AmplifyShaderEditor
 		public string GenerateObjectBoundsMin( ref MasterNodeDataCollector dataCollector, int uniqueId )
 		{
 			string value = string.Empty;
-			if ( m_currentSRPType != TemplateSRPType.BiRP && ( ASEPackageManagerHelper.CurrentHDRPBaseline >= ASESRPBaseline.ASE_SRP_14_X ||
-				ASEPackageManagerHelper.CurrentURPBaseline >= ASESRPBaseline.ASE_SRP_14_X  ) )
+			if ( m_currentSRPType != TemplateSRPType.BiRP && ( ASEPackageManagerHelper.CurrentHDRPBaseline >= SRPBaseline.ASE_SRP_14_X ||
+				ASEPackageManagerHelper.CurrentURPBaseline >= SRPBaseline.ASE_SRP_14_X  ) )
 			{
 				value = "unity_RendererBounds_Min.xyz";
 			}
@@ -1593,8 +1568,8 @@ namespace AmplifyShaderEditor
 		public string GenerateObjectBoundsMax( ref MasterNodeDataCollector dataCollector, int uniqueId )
 		{
 			string value = string.Empty;
-			if ( m_currentSRPType != TemplateSRPType.BiRP && ( ASEPackageManagerHelper.CurrentHDRPBaseline >= ASESRPBaseline.ASE_SRP_14_X ||
-				ASEPackageManagerHelper.CurrentURPBaseline >= ASESRPBaseline.ASE_SRP_14_X ) )
+			if ( m_currentSRPType != TemplateSRPType.BiRP && ( ASEPackageManagerHelper.CurrentHDRPBaseline >= SRPBaseline.ASE_SRP_14_X ||
+				ASEPackageManagerHelper.CurrentURPBaseline >= SRPBaseline.ASE_SRP_14_X ) )
 			{
 				value = "unity_RendererBounds_Max.xyz";
 			}
@@ -1609,8 +1584,8 @@ namespace AmplifyShaderEditor
 		public string GenerateObjectBoundsSize( ref MasterNodeDataCollector dataCollector, int uniqueId )
 		{
 			string value = string.Empty;
-			if ( m_currentSRPType != TemplateSRPType.BiRP && ( ASEPackageManagerHelper.CurrentHDRPBaseline >= ASESRPBaseline.ASE_SRP_14_X ||
-				ASEPackageManagerHelper.CurrentURPBaseline >= ASESRPBaseline.ASE_SRP_14_X ) )
+			if ( m_currentSRPType != TemplateSRPType.BiRP && ( ASEPackageManagerHelper.CurrentHDRPBaseline >= SRPBaseline.ASE_SRP_14_X ||
+				ASEPackageManagerHelper.CurrentURPBaseline >= SRPBaseline.ASE_SRP_14_X ) )
 			{
 				value = "( unity_RendererBounds_Max.xyz - unity_RendererBounds_Min.xyz )";
 			}

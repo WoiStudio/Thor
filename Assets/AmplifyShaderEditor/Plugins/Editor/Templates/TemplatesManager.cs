@@ -572,11 +572,14 @@ namespace AmplifyShaderEditor
 																//new TemplateTagData( TemplateColorMaskTag,false),
 																//new TemplateTagData( TemplateStencilOpTag,true),
 																};
+
 		public static string URPLitGUID = "94348b07e5e8bab40bd6c8a1e3df54cd";
 		public static string URPUnlitGUID = "2992e84f91cbeb14eab234972e07ea9d";
+		public static uint URPLitCRC = 4196295855;
 
 		public static string HDRPLitGUID = "53b46d85872c5b24c8f4f0a1c3fe4c87";
 		public static string HDRPUnlitGUID = "7f5cb9c3ea6481f469fdd856555439ef";
+		public static uint HDRPLitCRC = 596431725;
 
 		public static Dictionary<string, string> DeprecatedTemplates = new Dictionary<string, string>()
 		{

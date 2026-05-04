@@ -1058,7 +1058,11 @@ namespace AmplifyShaderEditor
 		}
 
 		[OnOpenAsset(0)]
-		static bool OnOpenAsset( int instanceID, int line )
+	#if UNITY_6000_4_OR_NEWER
+		static bool OnOpenAsset( EntityId entityId, int line )
+	#else
+		static bool OnOpenAsset( int entityId, int line )
+	#endif
 		{
 			// This test is needed since it is what is used when we both click the button to open generated code inside the canvas
 			// ( in there we call AssetDatabase.OpenAsset with line set to 1 to let ASE know that we want to ignore normal shader opening )
@@ -1070,11 +1074,7 @@ namespace AmplifyShaderEditor
 				return false;
 			}
 
-		#if UNITY_6000_3_OR_NEWER
-			UnityEngine.Object selection = EditorUtility.EntityIdToObject( instanceID );
-		#else
-			UnityEngine.Object selection = EditorUtility.InstanceIDToObject( instanceID );
-		#endif
+			UnityEngine.Object selection = AssetUtils.EntityIdToObject( new AssetUtils.EntityId( entityId ) );
 
 			ASEPackageManagerHelper.RequestInfo();
 			ASEPackageManagerHelper.Update();
@@ -1158,24 +1158,9 @@ namespace AmplifyShaderEditor
 		[MenuItem( "Assets/Create/Shader/Amplify Surface Shader" )]
 		static void CreateConfirmationStandardShader()
 		{
-			//string path = AssetDatabase.GetAssetPath( Selection.activeObject );
-			//if( path == "" )
-			//{
-			//	path = "Assets";
-			//}
-			//else if( System.IO.Path.GetExtension( path ) != "" )
-			//{
-			//	path = path.Replace( System.IO.Path.GetFileName( AssetDatabase.GetAssetPath( Selection.activeObject ) ), "" );
-			//}
-
-			//string assetPathAndName = AssetDatabase.GenerateUniqueAssetPath( path + "/New Amplify Shader.shader" );
 			var endNameEditAction = ScriptableObject.CreateInstance<DoCreateStandardShader>();
-			ProjectWindowUtil.StartNameEditingIfProjectWindowExists( 0, endNameEditAction, "New Amplify Shader.shader"/*assetPathAndName*/, AssetPreview.GetMiniTypeThumbnail( typeof( Shader ) ), null );
+			ProjectWindowUtil.StartNameEditingIfProjectWindowExists( AssetUtils.EntityId.None, endNameEditAction, "New Amplify Shader.shader", AssetPreview.GetMiniTypeThumbnail( typeof( Shader ) ), null );
 		}
-		//static void CreateNewShader(  )
-		//{
-		//	CreateNewShader( null, null );
-		//}
 
 		static void CreateNewShader( string customPath , string customShaderName )
 		{
@@ -1234,19 +1219,8 @@ namespace AmplifyShaderEditor
 		public static void CreateConfirmationTemplateShader( string templateGuid )
 		{
 			UIUtils.NewTemplateGUID = templateGuid;
-			//string path = AssetDatabase.GetAssetPath( Selection.activeObject );
-			//if( path == "" )
-			//{
-			//	path = "Assets";
-			//}
-			//else if( System.IO.Path.GetExtension( path ) != "" )
-			//{
-			//	path = path.Replace( System.IO.Path.GetFileName( AssetDatabase.GetAssetPath( Selection.activeObject ) ), "" );
-			//}
-
-			//string assetPathAndName = AssetDatabase.GenerateUniqueAssetPath( path + "/New Amplify Shader.shader" );
 			var endNameEditAction = ScriptableObject.CreateInstance<DoCreateTemplateShader>();
-			ProjectWindowUtil.StartNameEditingIfProjectWindowExists( 0, endNameEditAction, "New Amplify Shader.shader"/*assetPathAndName*/, AssetPreview.GetMiniTypeThumbnail( typeof( Shader ) ), null );
+			ProjectWindowUtil.StartNameEditingIfProjectWindowExists( AssetUtils.EntityId.None, endNameEditAction, "New Amplify Shader.shader", AssetPreview.GetMiniTypeThumbnail( typeof( Shader ) ), null );
 		}
 
 		public static Shader CreateNewTemplateShader( string templateGUID , string customPath = null, string customShaderName = null )
@@ -1292,21 +1266,8 @@ namespace AmplifyShaderEditor
 		static void CreateNewShaderFunction()
 		{
 			AmplifyShaderFunction asset = ScriptableObject.CreateInstance<AmplifyShaderFunction>();
-
-			//string path = AssetDatabase.GetAssetPath( Selection.activeObject );
-			//if( path == "" )
-			//{
-			//	path = "Assets";
-			//}
-			//else if( System.IO.Path.GetExtension( path ) != "" )
-			//{
-			//	path = path.Replace( System.IO.Path.GetFileName( AssetDatabase.GetAssetPath( Selection.activeObject ) ), "" );
-			//}
-
-			//string assetPathAndName = AssetDatabase.GenerateUniqueAssetPath( path + "/New ShaderFunction.asset" );
-
 			var endNameEditAction = ScriptableObject.CreateInstance<DoCreateFunction>();
-			ProjectWindowUtil.StartNameEditingIfProjectWindowExists( asset.GetInstanceID(), endNameEditAction, "New ShaderFunction.asset"/*assetPathAndName*/, AssetPreview.GetMiniThumbnail( asset ), null );
+			ProjectWindowUtil.StartNameEditingIfProjectWindowExists( AssetUtils.GetEntityId( asset), endNameEditAction, "New Shader Function.asset", AssetPreview.GetMiniThumbnail( asset ), null );
 		}
 
 		public void UpdateTabTitle( string newTitle, bool modified )
@@ -3529,11 +3490,7 @@ namespace AmplifyShaderEditor
 				}
 				else
 				{
-				#if UNITY_2020_1_OR_NEWER
 					if( www.result == UnityWebRequest.Result.ConnectionError )
-				#else
-					if( www.isNetworkError )
-				#endif
 					{
 						Debug.Log( "[AmplifyShaderEditor]\n" + www.error );
 					}
@@ -3748,11 +3705,7 @@ namespace AmplifyShaderEditor
 				}
 				else
 				{
-				#if UNITY_2020_1_OR_NEWER
 					if( www.result == UnityWebRequest.Result.ConnectionError )
-				#else
-					if( www.isNetworkError )
-				#endif
 					{
 						Debug.Log( "[AmplifyShaderEditor]\n" + www.error );
 					}
@@ -5540,11 +5493,11 @@ namespace AmplifyShaderEditor
 
 		public void UpdateNodePreviewListAndTime()
 		{
-		#if UNITY_2020_1_OR_NEWER
+#if UNITY_2020_1_OR_NEWER
 			bool hasFocus = UIUtils.CurrentWindow.hasFocus;
-		#else
+#else
 			bool hasFocus = ( EditorWindow.focusedWindow == UIUtils.CurrentWindow );
-		#endif
+#endif
 			if( UIUtils.CurrentWindow != this || !hasFocus )
 				return;
 

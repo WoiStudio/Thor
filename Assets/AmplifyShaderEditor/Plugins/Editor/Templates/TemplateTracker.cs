@@ -45,6 +45,10 @@ namespace AmplifyShaderEditor
 
 		static readonly Dictionary<string,AssetDescriptor> s_knownAssets = new Dictionary<string,AssetDescriptor>();
 		static readonly Dictionary<string,AssetDescriptor> s_knownTemplates = new Dictionary<string,AssetDescriptor>();
+
+		static readonly Dictionary<string,HashSet<TemplateManifest>> s_knownManifests = new Dictionary<string, HashSet<TemplateManifest>>();
+		public static Dictionary<string,HashSet<TemplateManifest>> KnownManifests => s_knownManifests;
+
 		static bool s_updateQueued;
 		static bool s_cacheLoaded;
 
@@ -70,7 +74,7 @@ namespace AmplifyShaderEditor
 				LoadCache();
 			}
 
-			QueueUpdate();
+			Update();
 		}
 
 		public static void ProjectChangedCall() => QueueUpdate();
@@ -101,6 +105,11 @@ namespace AmplifyShaderEditor
 
 		static void Update()
 		{
+			using ( new ScopedTimer( "TemplateTracker: Scanning Template Manifests", DebugEnabled ) )
+			{
+				ScanTemplateManifests();
+			}
+
 			using ( new ScopedTimer( "TemplateTracker: Requesting Package Info", DebugEnabled ) )
 			{
 				ASEPackageManagerHelper.RequestInfo();
@@ -134,8 +143,8 @@ namespace AmplifyShaderEditor
 			}
 
 		#if DEBUG_TRACKER
-			Debug.LogFormat( "[AmplifyShaderEditor] TemplateTracker: Current( {0} ), Added( {1} ), Changed( {2} ), Removed( {3} )",
-				s_knownTemplates.Count, added.Count, changed.Count, removed.Count );
+			Debug.LogFormat( "[AmplifyShaderEditor] TemplateTracker: Current( {0} ), Added( {1} ), Changed( {2} ), Removed( {3} ), Manifests( {4} )",
+				s_knownTemplates.Count, added.Count, changed.Count, removed.Count, s_knownManifests.Count );
 		#endif
 		}
 
@@ -191,6 +200,30 @@ namespace AmplifyShaderEditor
 			catch ( Exception e )
 			{
 				Debug.LogWarning( "[AmplifyShaderEditor] TemplateTracker: Failed to save template cache." + e.Message );
+			}
+		}
+
+		public static void ScanTemplateManifests()
+		{
+			string[] manifestGUIDs = AssetDatabase.FindAssets( "t:AmplifyShaderEditor.TemplateManifest" );
+			foreach ( var guid in manifestGUIDs )
+			{
+				var manifest = AssetDatabase.LoadAssetAtPath<TemplateManifest>( AssetDatabase.GUIDToAssetPath( guid ) );
+				if ( !string.IsNullOrEmpty( manifest.PackageName ) )
+				{
+					if ( !s_knownManifests.TryGetValue( manifest.PackageName, out HashSet<TemplateManifest> manifestSet ) )
+					{
+						manifestSet = new HashSet<TemplateManifest>();
+						s_knownManifests.TryAdd( manifest.PackageName, manifestSet );
+					}
+
+					manifestSet.Add( manifest );
+				}
+			}
+
+			foreach ( var manifestSet in s_knownManifests.Values )
+			{
+				manifestSet.RemoveWhere( item => item == null || string.IsNullOrEmpty( item.PackageName ) );
 			}
 		}
 
