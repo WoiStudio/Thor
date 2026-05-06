@@ -1,0 +1,2747 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8813639511118251925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_Ramp_Corner_1x1_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: 42804dee-53fa-4b10-9fc7-969d97109e8c
+  _prefabAsset: {fileID: 2404508064203590132, guid: c147bc2ef52315f4b8cdf995aaf2057c, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 2404508064203590132, guid: c147bc2ef52315f4b8cdf995aaf2057c, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 1, y: 0.9705389, z: 1}
+  _uiSelected: 0
+--- !u!114 &-8588446377235833359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b09c502d52d26944bd03a0b831a19c4, type: 3}
+  m_Name: Polygon
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PrefabLib
+  _guid:
+    _guidString: d16fea08-5184-4713-a790-041247d88101
+  _parentLib: {fileID: 0}
+  _directChildren: []
+  _prefabsVisibleInManager: 1
+  _libName: Polygon
+  _folderPath:
+    _path: Assets/Synty/PolygonPrototype/Prefabs/Buildings/Polygon
+    _reveresedPath: Polygon/Buildings/Prefabs/PolygonPrototype/Synty/Assets
+  _prefabs:
+  - {fileID: -6979687104120247820}
+  - {fileID: -5152117352565973191}
+  - {fileID: -8124780973644132159}
+  - {fileID: 9164067388599004541}
+  - {fileID: -7985685002621143549}
+  - {fileID: -7279944226419228921}
+  - {fileID: -3724414307105829567}
+  - {fileID: 1222459048973596706}
+  - {fileID: -8395562915840751769}
+  - {fileID: 1164420229493518316}
+  - {fileID: -3387941993537625764}
+  - {fileID: 4925752571087588362}
+  - {fileID: 7350525098491645214}
+  - {fileID: 6866348324658684126}
+  - {fileID: -2455215765642861344}
+  - {fileID: -2745419616393132379}
+  - {fileID: -5987078932665176043}
+  - {fileID: 216286952210867899}
+  - {fileID: -2136734632414061624}
+  - {fileID: -8125335031485434211}
+  - {fileID: -5907961919604156096}
+  - {fileID: -8207411049981994868}
+  - {fileID: 3736193864887443774}
+  - {fileID: -4654073708299229458}
+  - {fileID: -459519309819941867}
+  - {fileID: 3321215341319435475}
+  - {fileID: 2189488420668195017}
+  - {fileID: 5308172885611358842}
+  - {fileID: -5724496258238158728}
+  - {fileID: -8048052717263367992}
+  - {fileID: -6978748588017755446}
+  - {fileID: 2832377651538444413}
+  - {fileID: 928633650990490096}
+  - {fileID: 2002497355445459732}
+  - {fileID: -1125544589590679175}
+  - {fileID: 8160513045177261751}
+  - {fileID: 7453730440115074026}
+  - {fileID: 3457014843418271709}
+  - {fileID: -8813639511118251925}
+  - {fileID: -2656986677756325366}
+  - {fileID: -132489481986243395}
+  - {fileID: 617919497810771924}
+  - {fileID: 4320757805597207317}
+  - {fileID: -1405161565044554138}
+  - {fileID: 1543706745932682509}
+  - {fileID: -7830696555123428987}
+  - {fileID: 5368604856096969819}
+  - {fileID: -7248022360267790550}
+  - {fileID: -3223012122042929098}
+  - {fileID: 505953525411849660}
+  - {fileID: -6765495299057816833}
+  - {fileID: -3419286357628607805}
+  - {fileID: 1482261182658340229}
+  - {fileID: 8432178848507734914}
+  - {fileID: 5799644535533675533}
+  - {fileID: 1065930192607821473}
+  - {fileID: -1577537567147364340}
+  - {fileID: 2966634288612357919}
+  - {fileID: 2527750008596484110}
+  - {fileID: 6361221572847449159}
+  - {fileID: -2559297399409009906}
+  - {fileID: 7387549592913636854}
+  - {fileID: 4437999838878572318}
+  - {fileID: -1949943067699272228}
+  - {fileID: -4054439489491815858}
+  - {fileID: 2915582435686424472}
+  - {fileID: -645648868184658751}
+  - {fileID: 3255562178692072339}
+  - {fileID: 1613573707037333392}
+  - {fileID: -7668370942066593415}
+  - {fileID: -8510094075326529175}
+  - {fileID: 3186772376946549730}
+  - {fileID: -7177357976326709409}
+  - {fileID: -4726931301173939180}
+  - {fileID: -3715574718817638738}
+  - {fileID: -7542221047885443267}
+  - {fileID: -5076343333743118280}
+  - {fileID: -7462109098766237515}
+  - {fileID: -8151377019518379681}
+  - {fileID: -7975832721101354103}
+  - {fileID: -5750222325749021482}
+  - {fileID: 5102774747902006560}
+  _uiSelected: 1
+  _uiPinned: 0
+--- !u!114 &-8510094075326529175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_WallDoor_5x3_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: 7d799f89-e83c-42ce-a833-e1ad1b391a2d
+  _prefabAsset: {fileID: 1474764006240032, guid: 5af8c7596fa30f04f8fa65a374010693, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1474764006240032, guid: 5af8c7596fa30f04f8fa65a374010693, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 5, y: 3, z: 0.17289314}
+  _uiSelected: 0
+--- !u!114 &-8395562915840751769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_FloorChamfered_1x1_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: cd5d8dfc-b9b3-43d3-900d-8cb445b5c2a9
+  _prefabAsset: {fileID: 2813170958454938607, guid: e8ad362580e880e4884cd3ba2993ab4a, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 2813170958454938607, guid: e8ad362580e880e4884cd3ba2993ab4a, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 0.99953216, y: 0.099999994, z: 0.9995323}
+  _uiSelected: 0
+--- !u!114 &-8207411049981994868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_Floor_2x2_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: ac138b7c-8589-4d0a-8829-412739c78bfa
+  _prefabAsset: {fileID: 1731383900522002, guid: 97a4c0aac51126c43b48361675b1f1e2, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1731383900522002, guid: 97a4c0aac51126c43b48361675b1f1e2, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 2, y: 0.099999994, z: 2}
+  _uiSelected: 0
+--- !u!114 &-8151377019518379681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_WindowFrame_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: 42458069-118d-43d2-aefb-723c068c943f
+  _prefabAsset: {fileID: 1271451063744816, guid: 2962a51fdd6426946967675efee60c5d, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1271451063744816, guid: 2962a51fdd6426946967675efee60c5d, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 1.3071117, y: 1.4071119, z: 0.17289314}
+  _uiSelected: 0
+--- !u!114 &-8125335031485434211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_FloorInner_Curved_5x5_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: f1f2eb2f-969e-4089-8bcc-a6d8ba5f835a
+  _prefabAsset: {fileID: 1031329676768338, guid: b3863c5e123f8be4f9d8202f0c9579ce, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1031329676768338, guid: b3863c5e123f8be4f9d8202f0c9579ce, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 5, y: 0.099999994, z: 5}
+  _uiSelected: 0
+--- !u!114 &-8124780973644132159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_Column_2x3_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: 624d4707-683d-4f83-a378-4198de5b6e32
+  _prefabAsset: {fileID: 1035851325533772, guid: b38180f4dd93ed945ad6e4e365f91923, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1035851325533772, guid: b38180f4dd93ed945ad6e4e365f91923, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 0.39999998, y: 3, z: 0.39999998}
+  _uiSelected: 0
+--- !u!114 &-8048052717263367992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_Ramp_35_1x1_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: 5970ceda-4fa2-45d8-9144-6a87d119c70b
+  _prefabAsset: {fileID: 1848486572257472, guid: 164dcfb2df080e1478ddfe053cf2b630, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1848486572257472, guid: 164dcfb2df080e1478ddfe053cf2b630, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 1, y: 0.69976896, z: 1}
+  _uiSelected: 0
+--- !u!114 &-7985685002621143549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_Door_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: 4e6d1a76-7a91-462c-80c8-8c210db8c202
+  _prefabAsset: {fileID: 1024562954466752, guid: e025362a5346a474ba28d4f1c1eee293, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1024562954466752, guid: e025362a5346a474ba28d4f1c1eee293, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 1, y: 2.1, z: 0.09999996}
+  _uiSelected: 0
+--- !u!114 &-7975832721101354103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Prop_Ladder_1x1_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: 82f65a5b-5ab8-45ad-abc2-db5bbdd0e7d9
+  _prefabAsset: {fileID: 1864176768943316, guid: 07220963bd78ccc468f3191eef035868, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1864176768943316, guid: 07220963bd78ccc468f3191eef035868, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 0.6, y: 1, z: 0.10000004}
+  _uiSelected: 0
+--- !u!114 &-7830696555123428987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_RoofAngledCornerOuter_1x1_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: 6448239f-49ca-4240-a9f7-0e54829dd51a
+  _prefabAsset: {fileID: 1128856830631576, guid: 89bafddb480692245aaa21bec0bb96f3, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1128856830631576, guid: 89bafddb480692245aaa21bec0bb96f3, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: 0, z: 0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 1, y: 0.6929072, z: 1}
+  _uiSelected: 0
+--- !u!114 &-7668370942066593415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_WallDoor_2x3_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: 38e675fe-1af8-4334-853d-de5d4f5468bf
+  _prefabAsset: {fileID: 1962685672368708, guid: ae8ce1c258125ac4db2163e712c99949, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1962685672368708, guid: ae8ce1c258125ac4db2163e712c99949, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 1.9982541, y: 3, z: 0.17289314}
+  _uiSelected: 0
+--- !u!114 &-7542221047885443267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_Wall_1x3_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: 2bfdc533-1335-42ab-86b3-75e70ee7fdba
+  _prefabAsset: {fileID: 1543033834470240, guid: df0de12ef64f6854ba7a94013ffbff7e, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1543033834470240, guid: df0de12ef64f6854ba7a94013ffbff7e, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 1, y: 3, z: 0.099999994}
+  _uiSelected: 0
+--- !u!114 &-7462109098766237515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_Wall_5x3_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: 691cbf61-bd1b-4a60-90a1-a2ce5eda8d8c
+  _prefabAsset: {fileID: 1194301909540060, guid: a2fe7f9dc74a5ff4696014f411430c80, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1194301909540060, guid: a2fe7f9dc74a5ff4696014f411430c80, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -41, y: 0, z: -22}
+    _rotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+    _scale: {x: 1.0000002, y: 1, z: 1.0000002}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 5, y: 3, z: 0.099999994}
+  _uiSelected: 1
+--- !u!114 &-7279944226419228921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_FloorAngle_1x1_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: 90339283-7d66-4c7f-bf6b-676253f760ae
+  _prefabAsset: {fileID: 1200174444867438, guid: dbd25d824f716e74cb33fa4ccbc2675e, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1200174444867438, guid: dbd25d824f716e74cb33fa4ccbc2675e, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 1, y: 0.099999994, z: 1}
+  _uiSelected: 0
+--- !u!114 &-7248022360267790550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_RoofAngledCornerOuter_5x5_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: 05d1421d-a078-4d23-8af5-49ae0c730899
+  _prefabAsset: {fileID: 1084625839519290, guid: 01d1734f1997bd249ad05a814afa7e53, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1084625839519290, guid: 01d1734f1997bd249ad05a814afa7e53, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: 0, z: 0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 5, y: 3.001581, z: 5}
+  _uiSelected: 0
+--- !u!114 &-7177357976326709409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_WallWindowDouble_5x3_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: e0995b81-ad07-4b41-b69a-aa8c50da3a39
+  _prefabAsset: {fileID: 1706489585050706, guid: c35b6008f4d23cb4e8d4a26a40c0fc38, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1706489585050706, guid: c35b6008f4d23cb4e8d4a26a40c0fc38, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 5, y: 3, z: 0.17289314}
+  _uiSelected: 0
+--- !u!114 &-6979687104120247820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_Block_1x1_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: 34d11024-ec39-4f9b-8877-138564e2267d
+  _prefabAsset: {fileID: 1570628789228942, guid: baebdd3b26f756b4c8f1b2d2efe1cf42, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1570628789228942, guid: baebdd3b26f756b4c8f1b2d2efe1cf42, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 1, y: 1, z: 1}
+  _uiSelected: 0
+--- !u!114 &-6978748588017755446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_Ramp_40_1x1_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: fe9db1d0-344a-4b4f-aea0-39de6f6c24cb
+  _prefabAsset: {fileID: 1606879883949160, guid: 7ff9b381efb352949a54824ce158e19e, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1606879883949160, guid: 7ff9b381efb352949a54824ce158e19e, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 1, y: 0.8385478, z: 1}
+  _uiSelected: 0
+--- !u!114 &-6765495299057816833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_RoofAngledPoint_5x5_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: d054db5a-8d60-4380-bb84-7c0b58cfb3ba
+  _prefabAsset: {fileID: 1014843603738358, guid: 97b1a05acff8ab1418b779c19a097f0b, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1014843603738358, guid: 97b1a05acff8ab1418b779c19a097f0b, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: 0, y: 0, z: 0}
+    _rotation: {x: 0, y: 0, z: 0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 5, y: 1.769497, z: 5}
+  _uiSelected: 0
+--- !u!114 &-5987078932665176043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_FloorHole_5x5_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: 017f8770-8bde-4245-bb91-981b0cd6d52e
+  _prefabAsset: {fileID: 1331739100463622, guid: 29f1ba94d0eb7704d8bb523216b7a1cf, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1331739100463622, guid: 29f1ba94d0eb7704d8bb523216b7a1cf, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 5, y: 0.099999994, z: 5}
+  _uiSelected: 0
+--- !u!114 &-5907961919604156096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_Floor_1x1_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: 75711b17-b70f-4ee9-b96f-bee54df95230
+  _prefabAsset: {fileID: 1108372543209684, guid: 8767d9ea8dddf69429fb6c89e304be40, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1108372543209684, guid: 8767d9ea8dddf69429fb6c89e304be40, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 1, y: 0.099999994, z: 1}
+  _uiSelected: 0
+--- !u!114 &-5750222325749021482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Prop_Ladder_1x2_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: e53e61ab-2df2-4e07-b8a9-acf8678805cb
+  _prefabAsset: {fileID: 1162489914705966, guid: d035cb48551c42b448bc426a6c82786b, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1162489914705966, guid: d035cb48551c42b448bc426a6c82786b, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 0.6, y: 2, z: 0.10000004}
+  _uiSelected: 0
+--- !u!114 &-5724496258238158728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_Ramp_30_1x1_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: eab365f8-baa3-4e7b-a3db-d5fbee31f6e0
+  _prefabAsset: {fileID: 1467927348882432, guid: 33771a1a04d924d4bb5b7baaa65a729d, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1467927348882432, guid: 33771a1a04d924d4bb5b7baaa65a729d, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 1, y: 0.5770373, z: 1}
+  _uiSelected: 0
+--- !u!114 &-5152117352565973191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_Column_1x3_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: 2ea556a7-6349-4125-93f5-f4bd0c1a8944
+  _prefabAsset: {fileID: 1726612447692958, guid: 3f3dbe87a60db03418edd6f1c0a25506, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1726612447692958, guid: 3f3dbe87a60db03418edd6f1c0a25506, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 0.19999999, y: 3, z: 0.19999999}
+  _uiSelected: 0
+--- !u!114 &-5076343333743118280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_Wall_2x3_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: c2a60829-cc4b-4b3e-955b-6f6b71917594
+  _prefabAsset: {fileID: 1460905088059818, guid: 682255724988b1541af0927787d8456e, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1460905088059818, guid: 682255724988b1541af0927787d8456e, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 2, y: 3, z: 0.099999994}
+  _uiSelected: 0
+--- !u!114 &-4726931301173939180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_WallWindow_2x3_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: 217fcb4d-e87a-4385-a53c-b5a65b514060
+  _prefabAsset: {fileID: 1043177438711678, guid: dcd38533c298b0c4a9f5335ba411b0de, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1043177438711678, guid: dcd38533c298b0c4a9f5335ba411b0de, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 1.9982557, y: 3, z: 0.17289314}
+  _uiSelected: 0
+--- !u!114 &-4654073708299229458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_RailStairs_1x1_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: acdf3b0d-04b2-48ee-9a19-4fa96e32386d
+  _prefabAsset: {fileID: 1847292466118828, guid: 64c416090eb460443b8c48604183fc8c, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1847292466118828, guid: 64c416090eb460443b8c48604183fc8c, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 0.099999994, y: 1.6774006, z: 1}
+  _uiSelected: 0
+--- !u!114 &-4054439489491815858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_WallCurved_1x1_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: 044e4506-31b0-4fac-9003-3c121be54baf
+  _prefabAsset: {fileID: 1978149386433296, guid: cdddbc42bb9a15840b9e473185fe8ce4, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1978149386433296, guid: cdddbc42bb9a15840b9e473185fe8ce4, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 1, y: 3, z: 1}
+  _uiSelected: 0
+--- !u!114 &-3724414307105829567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_FloorAngle_2x2_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: 6dfe562d-7979-407b-9dfc-37f817da5290
+  _prefabAsset: {fileID: 1120434038250380, guid: c836db8b51ea3b94eb25834c3197f434, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1120434038250380, guid: c836db8b51ea3b94eb25834c3197f434, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 2, y: 0.099999994, z: 2}
+  _uiSelected: 0
+--- !u!114 &-3715574718817638738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_WallWindow_5x3_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: ed0e1d3b-2115-4749-96c2-4ad275f9eea4
+  _prefabAsset: {fileID: 1542337343933798, guid: e35f45c384227f94c810e7addc7972f9, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1542337343933798, guid: e35f45c384227f94c810e7addc7972f9, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 5, y: 3, z: 0.17289314}
+  _uiSelected: 0
+--- !u!114 &-3419286357628607805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_RoofAngled_1x1_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: 864acf3d-d9d1-47cf-aa32-561ff10eec7f
+  _prefabAsset: {fileID: 1547756099929168, guid: 6f3724bc4d1d2874083cc1cd5227c922, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1547756099929168, guid: 6f3724bc4d1d2874083cc1cd5227c922, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: 0, z: 0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 1, y: 0.6929072, z: 1}
+  _uiSelected: 0
+--- !u!114 &-3387941993537625764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_FloorChamfered_5x5_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: 3b296814-5986-4b31-a623-8c1ceb3c192f
+  _prefabAsset: {fileID: 9029708732474630657, guid: 0434d292b5a534e45ab9234c1dc1bb2a, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 9029708732474630657, guid: 0434d292b5a534e45ab9234c1dc1bb2a, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 4.996724, y: 0.099999994, z: 4.996724}
+  _uiSelected: 0
+--- !u!114 &-3223012122042929098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_RoofAngledPoint_1x1_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: d81fac51-34ef-42c5-ba0d-4c8c787aecef
+  _prefabAsset: {fileID: 1774076256993756, guid: 71fbb379c4ab32a4b830e8aef50d14b6, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1774076256993756, guid: 71fbb379c4ab32a4b830e8aef50d14b6, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: 0, y: 0, z: 0}
+    _rotation: {x: 0, y: 0, z: 0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 1, y: 0.3899701, z: 1}
+  _uiSelected: 0
+--- !u!114 &-2745419616393132379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_FloorHole_2x2_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: 89238552-17c3-4d51-b3e9-e157a8655964
+  _prefabAsset: {fileID: 1896763587351784, guid: 18ec9e6a77f6b284dada0292ea8a7656, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1896763587351784, guid: 18ec9e6a77f6b284dada0292ea8a7656, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 2, y: 0.099999994, z: 2}
+  _uiSelected: 0
+--- !u!114 &-2656986677756325366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_RoofAngledCornerInner_1x1_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: 59a59f09-3ae8-46fd-b593-a4e18991b7b6
+  _prefabAsset: {fileID: 1489141412441042, guid: e6c7adff407d6154681938139841127e, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1489141412441042, guid: e6c7adff407d6154681938139841127e, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: 0, z: 0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 1, y: 0.68483996, z: 1}
+  _uiSelected: 0
+--- !u!114 &-2559297399409009906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_WallArch_2x3_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: 6d6f3286-800e-4057-95e1-dcb054a31a2c
+  _prefabAsset: {fileID: 1230344956115336, guid: 13e30060410583d4f8fe91dc00fd9abc, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1230344956115336, guid: 13e30060410583d4f8fe91dc00fd9abc, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 2, y: 3, z: 0.08}
+  _uiSelected: 0
+--- !u!114 &-2455215765642861344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_FloorHole_1x1_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: cac4d8df-2fc0-49bf-bbc2-82e2dc5acb4d
+  _prefabAsset: {fileID: 1698730850828878, guid: 9a4c390a76076d1459b66dc7f6997398, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1698730850828878, guid: 9a4c390a76076d1459b66dc7f6997398, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 1, y: 0.099999994, z: 1}
+  _uiSelected: 0
+--- !u!114 &-2136734632414061624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_FloorInner_Curved_2x2_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: 42f53c9a-a932-41bb-9c86-fe781355c48a
+  _prefabAsset: {fileID: 1879107423438994, guid: e54c57d0bded1df4f9b05f93dc93e67e, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1879107423438994, guid: e54c57d0bded1df4f9b05f93dc93e67e, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 2, y: 0.099999994, z: 2}
+  _uiSelected: 0
+--- !u!114 &-1949943067699272228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_WallChamfered_5x5_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: d1416a21-3564-461c-8455-167d4cdbeb8d
+  _prefabAsset: {fileID: 1521185362211132, guid: 9176c792da8db4c4db18a4354c65f9a8, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1521185362211132, guid: 9176c792da8db4c4db18a4354c65f9a8, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 5, y: 3, z: 5}
+  _uiSelected: 0
+--- !u!114 &-1577537567147364340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_Stairs_1x2_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: 70b09eb9-ed16-4086-a257-d19682870632
+  _prefabAsset: {fileID: 1877994265966872, guid: 855d57c01bc2e7041adea269cfcf2fd0, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1877994265966872, guid: 855d57c01bc2e7041adea269cfcf2fd0, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 2, y: 0.5, z: 1}
+  _uiSelected: 0
+--- !u!114 &-1405161565044554138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_RoofAngledCornerMiddle_2x2_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: 31a57ac0-bed2-49af-802d-641d7a6fc7b2
+  _prefabAsset: {fileID: 1809185249551256, guid: 3d3cc953c3d737545b82109b68239386, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1809185249551256, guid: 3d3cc953c3d737545b82109b68239386, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: 0, z: 0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 2, y: 1.2701195, z: 2}
+  _uiSelected: 0
+--- !u!114 &-1125544589590679175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_Ramp_60_1x1_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: 0079e3fd-8770-4df7-94c6-5467fc699974
+  _prefabAsset: {fileID: 1696436856266436, guid: 5722442910ba34041af319266e0b6045, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1696436856266436, guid: 5722442910ba34041af319266e0b6045, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 1, y: 1.7300171, z: 1}
+  _uiSelected: 0
+--- !u!114 &-645648868184658751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_WallCurved_5x5_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: d5e12986-2495-4aca-8817-b629bd36041a
+  _prefabAsset: {fileID: 1413395420434154, guid: 4647afdee9cef8c4a978423770bae5e4, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1413395420434154, guid: 4647afdee9cef8c4a978423770bae5e4, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 5, y: 3, z: 5}
+  _uiSelected: 0
+--- !u!114 &-459519309819941867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_Rail_1x1_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: 59813a45-36d8-4af5-a321-e40cb33ebc9c
+  _prefabAsset: {fileID: 1306860891108064, guid: cb2d244f48389fe47bf64d3fd5f8d78c, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1306860891108064, guid: cb2d244f48389fe47bf64d3fd5f8d78c, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 0.100000024, y: 0.675, z: 1}
+  _uiSelected: 0
+--- !u!114 &-132489481986243395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_RoofAngledCornerInner_2x2_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: 6fe3348a-516b-41a3-bdd1-540b30582f5f
+  _prefabAsset: {fileID: 1963851722532810, guid: 1932f072403faf4478a06711de00ca5d, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1963851722532810, guid: 1932f072403faf4478a06711de00ca5d, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: 0, z: 0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 2, y: 1.2701195, z: 2}
+  _uiSelected: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d27d60231fbfd54a8dd0a2b498f7841, type: 3}
+  m_Name: Default
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PrefabLibProfile
+  _profileName: Default
+  _libs:
+  - {fileID: -8588446377235833359}
+--- !u!114 &216286952210867899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_FloorInner_Curved_1x1_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: 8755e21a-ff4e-4bd0-8d3f-d67faf8bba48
+  _prefabAsset: {fileID: 1922651709149740, guid: 7bee566818672ba479096dacfbd74f87, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1922651709149740, guid: 7bee566818672ba479096dacfbd74f87, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 1, y: 0.10000001, z: 1}
+  _uiSelected: 0
+--- !u!114 &505953525411849660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_RoofAngledPoint_2x2_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: f20007da-3610-4412-bcdf-ede4f844b2dd
+  _prefabAsset: {fileID: 1685404833471972, guid: db725fc46046fce4ba8121abff2c7bcf, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1685404833471972, guid: db725fc46046fce4ba8121abff2c7bcf, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: 0, y: 0, z: 0}
+    _rotation: {x: 0, y: 0, z: 0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 2, y: 0.75, z: 2}
+  _uiSelected: 0
+--- !u!114 &617919497810771924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_RoofAngledCornerInner_5x5_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: 2b5877d6-56fb-4dd1-abed-5319cf77059a
+  _prefabAsset: {fileID: 1589750275144402, guid: 2a5990cd2652f6e41a69968d287f54d8, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1589750275144402, guid: 2a5990cd2652f6e41a69968d287f54d8, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: 0, z: 0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 5, y: 3.0015814, z: 5}
+  _uiSelected: 0
+--- !u!114 &928633650990490096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_Ramp_50_1x1_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: c976ea35-8a01-4bab-bcdc-0b5b27a441c3
+  _prefabAsset: {fileID: 1142338909115876, guid: 363eb8cec943015439e889d8812f5f99, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1142338909115876, guid: 363eb8cec943015439e889d8812f5f99, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 1, y: 1.1919239, z: 1}
+  _uiSelected: 0
+--- !u!114 &1065930192607821473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_Stairs_1x1_02P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: ec3e7381-caa2-4731-83b0-4dd4047e8e2d
+  _prefabAsset: {fileID: 1024711399225414, guid: f29563f0188a8a24bae30eac681a440a, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1024711399225414, guid: f29563f0188a8a24bae30eac681a440a, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 1, y: 0.4994887, z: 1}
+  _uiSelected: 0
+--- !u!114 &1164420229493518316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_FloorChamfered_2x2_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: 28a302eb-40e6-47a3-9e19-b3aadacb6629
+  _prefabAsset: {fileID: 4020141072600536053, guid: f82f57053ac6d18468142b5743b1b397, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 4020141072600536053, guid: f82f57053ac6d18468142b5743b1b397, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 1.9988229, y: 0.09511621, z: 1.9988229}
+  _uiSelected: 0
+--- !u!114 &1222459048973596706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_FloorAngle_5x5_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: f090cd91-d3ff-4927-a26d-d07837aff71d
+  _prefabAsset: {fileID: 1242151962472430, guid: 9987669d5dc94af478689af7ec39dcb2, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1242151962472430, guid: 9987669d5dc94af478689af7ec39dcb2, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 5, y: 0.099999994, z: 5}
+  _uiSelected: 0
+--- !u!114 &1482261182658340229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_RoofAngled_2x2_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: c8111752-ee32-4bde-bfca-19ea9cfb1be8
+  _prefabAsset: {fileID: 1772018711696968, guid: 356c770e2a9269d4b9f85dfa46bf5daf, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1772018711696968, guid: 356c770e2a9269d4b9f85dfa46bf5daf, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 2, y: 1.2701194, z: 2}
+  _uiSelected: 0
+--- !u!114 &1543706745932682509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_RoofAngledCornerMiddle_5x5_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: 1e6a7a65-ef4d-4090-9592-991a208ef849
+  _prefabAsset: {fileID: 1807913022311374, guid: cdf82fc14962eaf4889b9fef60381182, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1807913022311374, guid: cdf82fc14962eaf4889b9fef60381182, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: 0, z: 0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 5, y: 3.0015814, z: 5}
+  _uiSelected: 0
+--- !u!114 &1613573707037333392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_WallDoorDouble_5x3_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: 7ad64a95-7f47-47fe-a194-68fb823b222b
+  _prefabAsset: {fileID: 1956998697540864, guid: 77f5dcdcf285a804d99abc356ad1b8c7, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1956998697540864, guid: 77f5dcdcf285a804d99abc356ad1b8c7, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 5, y: 3, z: 0.17289314}
+  _uiSelected: 0
+--- !u!114 &2002497355445459732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_Ramp_55_1x1_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: 3e7627bd-3caa-4253-9b57-ac42154f7351
+  _prefabAsset: {fileID: 1807387938897320, guid: f33661f8dac407d4ebf7501fae1ca00a, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1807387938897320, guid: f33661f8dac407d4ebf7501fae1ca00a, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 1, y: 1.4272047, z: 1}
+  _uiSelected: 0
+--- !u!114 &2189488420668195017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_Ramp_20_1x1_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: ed12194d-43e9-4a9a-8d55-489815d53443
+  _prefabAsset: {fileID: 1904132469404530, guid: 30279db7b9983d14495f8e5eb978af20, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1904132469404530, guid: 30279db7b9983d14495f8e5eb978af20, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 1, y: 0.36375242, z: 1}
+  _uiSelected: 0
+--- !u!114 &2527750008596484110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_Stairs_1x3_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: 7c9bb514-59cf-4ca3-b006-1c4956a21d61
+  _prefabAsset: {fileID: 1618680443849094, guid: 3ecedab8817d6db40848e273e6614cf8, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1618680443849094, guid: 3ecedab8817d6db40848e273e6614cf8, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: 0, y: 0, z: 0}
+    _rotation: {x: -0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 1, y: 2.9969323, z: 6}
+  _uiSelected: 0
+--- !u!114 &2832377651538444413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_Ramp_45_1x1_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: d444ff8e-255d-490b-b4af-04a0a5c4fda2
+  _prefabAsset: {fileID: 1950464357429106, guid: bd97c05e714e4e44a95ebdeaa26a6c9f, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1950464357429106, guid: bd97c05e714e4e44a95ebdeaa26a6c9f, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 1, y: 1, z: 1}
+  _uiSelected: 0
+--- !u!114 &2915582435686424472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_WallCurved_2x2_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: b5303b60-feb6-452e-93f1-3890f6f1fd2c
+  _prefabAsset: {fileID: 1054821309384944, guid: c779e092331d4e64bbb3f86815f17dab, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1054821309384944, guid: c779e092331d4e64bbb3f86815f17dab, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 2, y: 3, z: 2}
+  _uiSelected: 0
+--- !u!114 &2966634288612357919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_Stairs_1x2_02P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: 18e7b79e-37fc-4b75-9a86-31110029ffd2
+  _prefabAsset: {fileID: 1396965626847834, guid: 7297089d0c6fc6749bc78ffbc824ec04, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1396965626847834, guid: 7297089d0c6fc6749bc78ffbc824ec04, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 2, y: 0.4994887, z: 1}
+  _uiSelected: 0
+--- !u!114 &3186772376946549730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_WallWindowDouble_2x3_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: f0666ae0-83ed-4631-8e2c-6e10ad320bd5
+  _prefabAsset: {fileID: 1477043248280934, guid: bf22d3d2bf62ee743b3a0173847663db, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1477043248280934, guid: bf22d3d2bf62ee743b3a0173847663db, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 1.9982557, y: 3, z: 0.17289314}
+  _uiSelected: 0
+--- !u!114 &3255562178692072339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_WallDoorDouble_3x3_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: ca9c791d-4ce8-46ec-8e8a-d02a8861d74d
+  _prefabAsset: {fileID: 1978419138126036, guid: fb5fe60765bf4b841bd460907c1f255a, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1978419138126036, guid: fb5fe60765bf4b841bd460907c1f255a, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 3.002533, y: 3, z: 0.17289314}
+  _uiSelected: 0
+--- !u!114 &3321215341319435475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_Rail_5x1_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: 3cc337b3-2a0e-443b-966b-e0f2e3f75589
+  _prefabAsset: {fileID: 1576974579525394, guid: 99f02f99c9384e44f96a578070591d9e, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1576974579525394, guid: 99f02f99c9384e44f96a578070591d9e, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: 0, y: 0, z: 0}
+    _rotation: {x: 0, y: 0, z: 0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 0.10000005, y: 0.675, z: 5}
+  _uiSelected: 0
+--- !u!114 &3457014843418271709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_Ramp_Corner_1x1_01
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: 51628b69-b0a5-4057-8e6c-f512b1f1b740
+  _prefabAsset: {fileID: 980611305662772253, guid: 3f7b267dacadf90429de28122dbc0ba0, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 980611305662772253, guid: 3f7b267dacadf90429de28122dbc0ba0, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 1, y: 1, z: 1}
+  _uiSelected: 0
+--- !u!114 &3736193864887443774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_Floor_5x5_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: dc10b1fd-56a2-4ea4-ad6b-f42ba0a1326d
+  _prefabAsset: {fileID: 1000599048822866, guid: 5171d5eb12e0f184a8761aa4157f7d00, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1000599048822866, guid: 5171d5eb12e0f184a8761aa4157f7d00, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 5, y: 0.099999994, z: 5}
+  _uiSelected: 0
+--- !u!114 &4320757805597207317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_RoofAngledCornerMiddle_1x1_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: bcc1f840-e7c9-46d7-9f87-00ba6fc52ef3
+  _prefabAsset: {fileID: 1796192518529110, guid: ca69b4b32a4a105418058e127414d186, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1796192518529110, guid: ca69b4b32a4a105418058e127414d186, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: 0, z: 0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 1, y: 0.6929072, z: 1}
+  _uiSelected: 0
+--- !u!114 &4437999838878572318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_WallChamfered_2x2_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: 6b94c8aa-6573-4cb8-895c-dffbba9c2697
+  _prefabAsset: {fileID: 1139096716249668, guid: 1a0c2535c014dc54cadd2f2172c087e0, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1139096716249668, guid: 1a0c2535c014dc54cadd2f2172c087e0, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 2, y: 3, z: 2}
+  _uiSelected: 0
+--- !u!114 &4925752571087588362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_FloorCurved_1x1_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: 8a61d886-ea7c-4d39-8ea6-04836fa42f7f
+  _prefabAsset: {fileID: 1374396294510650, guid: 6c8e61a579e73384184fc49c88900225, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1374396294510650, guid: 6c8e61a579e73384184fc49c88900225, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 1, y: 0.10000001, z: 1}
+  _uiSelected: 0
+--- !u!114 &5102774747902006560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Prop_Ladder_1x4_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: 9ebe75a0-5f9a-4180-8cd5-dae3e8679a94
+  _prefabAsset: {fileID: 1227856314111808, guid: c83e01c66042e7645a9d69f538eabe2c, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1227856314111808, guid: c83e01c66042e7645a9d69f538eabe2c, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 0.6000001, y: 4, z: 0.10000004}
+  _uiSelected: 0
+--- !u!114 &5308172885611358842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_Ramp_25_1x1_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: 80055cdb-7bd9-4436-8378-5cfc8919b778
+  _prefabAsset: {fileID: 1754582518137672, guid: 3dfdc09e3f15b984aa13c190aa6dfd04, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1754582518137672, guid: 3dfdc09e3f15b984aa13c190aa6dfd04, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 1, y: 0.4662552, z: 1}
+  _uiSelected: 0
+--- !u!114 &5368604856096969819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_RoofAngledCornerOuter_2x2_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: fc36f4af-d8e7-4d2b-bcb6-c3f79132a700
+  _prefabAsset: {fileID: 1979616426471026, guid: 4820ee8899aff7e4fa6c35401ca4e3d4, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1979616426471026, guid: 4820ee8899aff7e4fa6c35401ca4e3d4, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: 0, z: 0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 2, y: 1.2701195, z: 2}
+  _uiSelected: 0
+--- !u!114 &5799644535533675533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_Stairs_1x1_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: e7bc5ae9-c0c8-47b4-b48c-c4996aafa5ab
+  _prefabAsset: {fileID: 1591475188721028, guid: 30f343dac697fbb4fbf696ec35347718, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1591475188721028, guid: 30f343dac697fbb4fbf696ec35347718, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 1, y: 0.4994887, z: 1}
+  _uiSelected: 0
+--- !u!114 &6361221572847449159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_Stairs_1x3_02P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: c80a3d64-48e0-4154-b72d-adf271d72a05
+  _prefabAsset: {fileID: 1443024364284854, guid: 9b7c1c724c5f1a342a82b4500738d35d, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1443024364284854, guid: 9b7c1c724c5f1a342a82b4500738d35d, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 1, y: 2.9969323, z: 6}
+  _uiSelected: 0
+--- !u!114 &6866348324658684126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_FloorCurved_5x5_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: 15424409-9e5a-4cac-84d4-737e68fc81d5
+  _prefabAsset: {fileID: 1777419974032092, guid: 4fdc90d4810052940bae39b01e92a182, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1777419974032092, guid: 4fdc90d4810052940bae39b01e92a182, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 5, y: 0.099999994, z: 5}
+  _uiSelected: 0
+--- !u!114 &7350525098491645214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_FloorCurved_2x2_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: cbf01d95-d181-428e-a64a-dd1594766dc3
+  _prefabAsset: {fileID: 1317150446354502, guid: 67d8881229360d648999c5975fdec7f9, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1317150446354502, guid: 67d8881229360d648999c5975fdec7f9, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 2, y: 0.099999994, z: 2}
+  _uiSelected: 0
+--- !u!114 &7387549592913636854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_WallChamfered_1x1_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: b86e4634-89e4-4d7e-8c5a-69d0036db1dd
+  _prefabAsset: {fileID: 1646197561367702, guid: bee09458c57f5424dbba4125424fc022, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1646197561367702, guid: bee09458c57f5424dbba4125424fc022, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 1, y: 3, z: 1}
+  _uiSelected: 0
+--- !u!114 &7453730440115074026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_Ramp_70_1x1_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: d669d87a-f0fc-4f4a-8875-57ec9214a8dc
+  _prefabAsset: {fileID: 1950366490001396, guid: a434bedf3d3673446827301acda869f0, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1950366490001396, guid: a434bedf3d3673446827301acda869f0, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 1, y: 2.7466981, z: 1}
+  _uiSelected: 0
+--- !u!114 &8160513045177261751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_Ramp_65_1x1_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: 23b39305-d5e6-4673-957b-c3522cbd8914
+  _prefabAsset: {fileID: 1072906815185112, guid: 456da98c6ee73d74fba6e0ca2b603c80, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1072906815185112, guid: 456da98c6ee73d74fba6e0ca2b603c80, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 1, y: 2.1437712, z: 1}
+  _uiSelected: 0
+--- !u!114 &8432178848507734914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_RoofAngled_5x5_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: 66525be0-bdc6-46a7-a578-83c013e4e125
+  _prefabAsset: {fileID: 1766802757444390, guid: 50873bc5f55946d468bdb18e13a9f7e4, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1766802757444390, guid: 50873bc5f55946d468bdb18e13a9f7e4, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: 0, z: 0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 5, y: 3.001581, z: 5}
+  _uiSelected: 0
+--- !u!114 &9164067388599004541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdaf7f2c4c1d04580d676ed3717f21, type: 3}
+  m_Name: SM_Buildings_DoorFrame_01P
+  m_EditorClassIdentifier: Assembly-CSharp::GSPAWN.PluginPrefab
+  _guid:
+    _guidString: 31c0a1d6-05a4-4937-8932-7d939825dcb4
+  _prefabAsset: {fileID: 1609246903973986, guid: 7d1e5b8ce3cce8448811fa721df10782, type: 3}
+  _preview:
+    _prefabAsset: {fileID: 1609246903973986, guid: 7d1e5b8ce3cce8448811fa721df10782, type: 3}
+    _texture: {fileID: 0}
+    _yaw: 0
+    _pitch: 0
+  _sceneToObjectGroup:
+    _serializedKeys: []
+    _serializedValues: []
+  _spawnGuideTransformTRS:
+    _position: {x: -0, y: 0, z: 0}
+    _rotation: {x: 0, y: -0, z: -0, w: 1}
+    _scale: {x: 1, y: 1, z: 1}
+  _modularSnapVerticalStep: 0
+  _surfaceSnapAppliedOffsetFromSurface: 0
+  _tag: 0
+  _modelSize: {x: 1.3071117, y: 2.253556, z: 0.17289314}
+  _uiSelected: 0
